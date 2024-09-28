@@ -1,7 +1,7 @@
 module.exports = {
     apps: [
       {
-        name: 'prayer-times',
+        name: 'prayer-riyadh',
         script: 'node_modules/.bin/next',
         args: 'start -p 3000',
         cwd: './',
