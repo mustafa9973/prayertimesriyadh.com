@@ -9,9 +9,33 @@ const DailyPrayers=async (prayerData:any)=>{
 
 
   const map:any=AppConstants.prayerMap
-
-
+  const today=new Date();
+  const options: Intl.DateTimeFormatOptions = { weekday: 'long' };
+  const dayName = today.toLocaleDateString('en-US', options);
+  let day = today.getDate()<10?`0${today.getDate()}`:today.getDate();
+  const month = today.getMonth()+1; // Get Arabic month name
+  const year = today.getFullYear();
  const monthArabic:any= AppConstants.monthArabic
+
+ const eventLd =    {
+  "@context": "https://schema.org/",
+  "@type": "Event",
+  "name": `اوقات الصلاة في الرياض اليوم - ${day}-${month}-${year}`,
+  "description": "",
+  "startDate": `${year}-${month}-${day}T${(data?.timings.Fajr as string).split('(')[0]}&#x2B;03:00`,
+  "endDate": `${year}-${month}-${day}T${(data?.timings.Isha as string).split('(')[0]}&#x2B;03:00`,
+  "location": "الرياض - السعودية",
+  "eventSchedule":[
+    {
+
+      "@type":"schedule",
+      "repeatFrequency":"P1M",
+      "byDay":`${dayName}`,
+      "scheduleTimezone":"Asia/Riyadh"
+    } 
+
+  ]
+}
 
     return(
 
@@ -21,14 +45,14 @@ const DailyPrayers=async (prayerData:any)=>{
 
 </div>
 <div className="overflow-x-auto mt-4">
-<h2 className="text-lg font-semibold text-gray-700 mb-2">
-    اوقات الصلاة في الرياض - {`${new Date().getDate()} ${monthArabic[data.month]} ${new Date().getFullYear()}`}
+<h2 className="text-md md:text-xl font-semibold text-gray-700 mb-2">
+    اوقات الصلاة في الرياض - {`${today.getDate()} ${monthArabic[data.month]} ${today.getFullYear()}`}
     </h2>
   <p>
     
-   <strong> اوقات الصلاة في الرياض اليوم</strong>  تبدأ الساعة {(data?.timings.Fajr as string).split('(')[0]} صباحا مع أذان الفجر وتنتهي في الساعة 7:30 صباحا بصلاة العشاء. شروق الشمس الساعة 5:00 صباحا ، وغروب الشمس و<strong>  الأذان المغربي  </strong> الساعة 6:30 مساء.
+   <strong> اوقات الصلاة في الرياض اليوم</strong>  تبدأ الساعة {(data?.timings.Fajr as string).split('(')[0]} صباحا مع أذان الفجر وتنتهي في الساعة {(data?.timings.Isha as string).split('(')[0]} صباحا بصلاة العشاء. شروق الشمس الساعة {(data?.timings.Sunrise as string).split('(')[0]} صباحا ، وغروب الشمس و<strong>  الأذان المغربي  </strong> الساعة {(data?.timings.Maghrib as string).split('(')[0]} مساء.
 
-بالتوقيت الحالي في الرياض ، ستكون الصلاة القادمة الظهر ، و الأذان سيكون الساعة 11:56 صباحا.
+   وفقا لتوقيت الوقت الحالي في الرياض ، ستكون الصلاة القادمة {map[(data?.nextPrayer as string)]?.name} ، وستكون الأذان الساعة {(data?.timings[data?.nextPrayer ] as string).split('(')[0]} صباحا.
 
 
 </p>
@@ -48,7 +72,7 @@ const DailyPrayers=async (prayerData:any)=>{
                 width={parseInt(prayerInfo.width, 10)} // Convert to number
                 height={parseInt(prayerInfo.height, 10)} // Convert to number
                 src={`/img/${prayer.toLowerCase()}.webp`}
-                alt={`${prayerInfo.name} أذان`}
+                 alt= { prayerInfo.name=='الشروق'? 'الشروق' : `أذان ${prayerInfo.name}`}
               />
             </td>
             <td className='font-bold'>{prayerInfo.name}</td>
@@ -59,7 +83,16 @@ const DailyPrayers=async (prayerData:any)=>{
     </tbody>
   </table>
 </div>
+<section>
 
+  
+      {/* Add JSON-LD to your page */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventLd) }}
+      />
+      {/* ... */}
+    </section>
 </>
     )
 }

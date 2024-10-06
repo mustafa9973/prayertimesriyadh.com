@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Amiri } from "next/font/google";
 import "./globals.css";
 import Navbar from "./(components)/navbar/navbar";
-import ReduxProvider from "./redux/redux-provider";
+
 import Footer from "./(components)/footer/footer";
 
 const inter = Amiri({ 
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ReduxProvider>
+
     <html lang="ar" dir="rtl">
 
 
@@ -34,6 +34,6 @@ export default function RootLayout({
         <Footer></Footer>
         </body>
     </html>
-    </ReduxProvider>
+
   );
 }

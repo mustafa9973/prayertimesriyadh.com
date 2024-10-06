@@ -26,7 +26,7 @@ const TimeHandler = (prayerData:any) => {
 
        const currentRiyadhTime=DateTime.now().setZone('Asia/Riyadh')
 
-       console.log("currentRiyadhTime:"+currentRiyadhTime.toObject)
+   
        const currentPrayerTime=DateTime.fromMillis(next.nextPrayerTime).setZone('Asia/Riyadh')
 
 

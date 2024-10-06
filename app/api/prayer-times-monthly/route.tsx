@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
 
       const riyadhDate = DateTime.now().setZone(timeZone).toJSDate();
 
-    const res = await fetch(`https://api.aladhan.com/v1/calendarByCity/${riyadhDate.getFullYear()}/${ riyadhDate.getMonth()+1}?city=riyadh&country=saudia%20arab&method=${method}&school=${school}`)
+    const res = await fetch(`https://api.aladhan.com/v1/calendarByCity/${riyadhDate.getFullYear()}/${ riyadhDate.getMonth()+1}?city=riyadh&country=saudia%20arab&method=${method}&school=${school} `, { cache: 'no-store' })
 
   
     const json = await res.json()
