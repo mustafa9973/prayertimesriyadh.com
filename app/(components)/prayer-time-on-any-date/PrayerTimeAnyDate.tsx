@@ -29,7 +29,7 @@ const PrayerTimeAnyDate = () => {
         const data = await res.json()
 
         let prayerData=data.data
-        console.log(prayerData)
+ 
         delete  prayerData.timings.Imsak
         delete  prayerData.timings.Sunset
         delete  prayerData.timings.Midnight

@@ -1,4 +1,4 @@
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import DailyPrayers from "./(components)/daily-prayers/dailyPrayers";
 import PrayerTimeAnyDate from "./(components)/prayer-time-on-any-date/PrayerTimeAnyDate";
 import TimeHanlder from "./(components)/timer-handler/time-handler";
@@ -13,10 +13,12 @@ export async function generateMetadata(
  
   const method = 4;
   const school = 0;
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/prayer-times-monthly?method=${method}&school=${school}`,{  cache: 'no-store' })
+  const today=new Date();
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/prayer-times-monthly?method=${method}&school=${school}`,{ 
+    next:{revalidate:120}, cache: 'no-store' })
   const data = await response.json()
   return {
-    title: "اوقات الصلاة في الرياض | وقت الصلاة اليوم",
+    title: `اوقات الصلاة في الرياض |  ${today.getDate()} ${AppConstants.monthArabic[data?.formattedTodayData?.month]} ${today.getFullYear()} `,
     
       openGraph: {
         title: "اوقات الصلاة في مدينة الرياض",
@@ -43,7 +45,7 @@ export default async function Home() {
   const method = 4;
   const school = 0;
   const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/prayer-times-monthly?method=${method}&school=${school}`,{ 
-     cache: 'no-store' })
+    cache: 'no-store' })
 
   const dynamic = 'force-dynamic'
   const data = await response.json()
@@ -174,7 +176,7 @@ export default async function Home() {
             <p>بما أن توقيت الصلاة يعتمد على حركة الشمس التي تتغير بانتظام كل يوم، فإن وقت الصلاة يتغير أيضاً. كما أن توقيت الصلاة يختلف حسب الأماكن.
 هذا الموقع مخصص لمشاركة أوقات الصلاة اليومية في الرياض. يمكنك التحقق من مواقيت الصلاة في الرياض يوميا</p>
 
-            <h3>قائمة المساجد في الرياض</h3>
+            <h3 className="font-semibold text-md md:text-xl my-3" >قائمة المساجد في الرياض</h3>
             <p>الصلاة في المسجد مع الآخرين مهمة جدًا في الإسلام لأنها تجلب مكافآت عظيمة وتساعد على بناء شعور قوي بالمجتمع. قال النبي محمد (صلى الله عليه وسلم):</p>
             <p className="text-center mt-3">
               <strong>عَنْ أَبِي هُرَيْرَةَ قَالَ: قَالَ رَسُولُ اللَّهِ ﷺ: صَلَاةُ الْجَمَاعَةِ تَفْضُلُ صَلَاةَ الْفَرْدِ بِسَبْعٍ وَعِشْرِينَ دَرَجَةً (صحيح البخاري، الكتاب 11، الحديث 618)</strong>
