@@ -4,6 +4,8 @@ export function compareDatesOnly(dateString: string): number {
 
 
     const inputDate = new Date(dateString); 
+   
+
     inputDate.setHours(0)
     inputDate.setMinutes(0)
     inputDate.setSeconds(0)

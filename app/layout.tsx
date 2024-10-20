@@ -27,7 +27,7 @@ export default function RootLayout({
 
       <body className={`bg-gray-100 ${inter.className}`}>
       <Navbar></Navbar>
-        <div className="xs:p-4 sm:p-6">
+        <div className="xs:px-2 xs:py-2 sm:p-6">
 
         {children}
         </div>
