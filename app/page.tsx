@@ -13,8 +13,7 @@ export async function generateMetadata(
  
   const method = 4;
   const school = 0;
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/prayer-times-monthly?method=${method}&school=${school}`,{ 
-    next:{revalidate:120}, cache: 'no-store' })
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/prayer-times-monthly?method=${method}&school=${school}`,{  cache: 'no-store' })
   const data = await response.json()
   return {
     title: "اوقات الصلاة في الرياض | وقت الصلاة اليوم",
@@ -44,7 +43,7 @@ export default async function Home() {
   const method = 4;
   const school = 0;
   const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/prayer-times-monthly?method=${method}&school=${school}`,{ 
-    next:{revalidate:60}, cache: 'no-store' })
+     cache: 'no-store' })
 
   const dynamic = 'force-dynamic'
   const data = await response.json()
