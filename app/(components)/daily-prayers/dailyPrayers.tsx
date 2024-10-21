@@ -22,17 +22,21 @@ const DailyPrayers=async (prayerData:any)=>{
   "@context": "https://schema.org/",
   "@type": "Event",
   "name": `اوقات الصلاة في الرياض اليوم - ${day}-${month}-${year}`,
-  "description": "",
+  "description": `أوقات الصلاة في الرياض اليوم تبدأ الساعة ${(data?.timings.Fajr as string).split('(')[0]} صباحا مع أذان الفجر وتنتهي في الساعة ${(data?.timings?.Isha as string).split('(')[0]} صباحا بصلاة العشاء. شروق الشمس الساعة ${(data?.timings.Sunrise as string).split('(')[0]} صباحا، وغروب الشمس والأذان المغربي الساعة ${(data?.timings.Maghrib as string).split('(')[0]} مساء.`,
   "startDate": `${year}-${month}-${day}T${(data?.timings.Fajr as string).split('(')[0]}&#x2B;03:00`,
   "endDate": `${year}-${month}-${day}T${(data?.timings.Isha as string).split('(')[0]}&#x2B;03:00`,
   "location": "الرياض - السعودية",
+  "address":"الرياض - السعودية",
+  "image":"https://prayertimesriyadh.com/img/prayer-times-riyadh.webp",
+
   "eventSchedule":[
     {
 
       "@type":"schedule",
       "repeatFrequency":"P1M",
       "byDay":`${dayName}`,
-      "scheduleTimezone":"Asia/Riyadh"
+      "scheduleTimezone":"Asia/Riyadh",
+
     } 
 
   ]

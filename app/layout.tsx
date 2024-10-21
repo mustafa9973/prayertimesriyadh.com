@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
 import { Amiri } from "next/font/google";
 import "./globals.css";
-import Navbar from "./(components)/navbar/navbar";
 
-import Footer from "./(components)/footer/footer";
+import dynamic from "next/dynamic";
+
+const Navbar = dynamic(() => import('./(components)/navbar/navbar'))
+const Footer = dynamic(() => import('./(components)/footer/footer'))
 
 const inter = Amiri({ 
   subsets: ["arabic"],
   weight:"400"
+  
  });
 
 export const metadata: Metadata = {

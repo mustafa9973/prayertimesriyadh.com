@@ -1,8 +1,10 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import ClientNavigation from './ClientNavigation'; // Import the client-side component
 
+
+const ClientNavigation = dynamic(() => import('./ClientNavigation'))
 const navigation = [
   { name: 'مواقيت الصلاة في الرياض', href: '/' },
   { name: 'التاريخ هجري', href: '/hijri-date' },

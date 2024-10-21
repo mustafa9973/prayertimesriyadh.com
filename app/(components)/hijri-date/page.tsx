@@ -1,7 +1,11 @@
 import { Metadata } from "next";
-import DateDropdowns from '../date-dropdown/date-dropdown'
 import { AppConstants } from "@/app/AppConstants";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+
+const DateDropdowns = dynamic(() => import('../date-dropdown/date-dropdown'))
+
 export async function generateMetadata(
 
 ): Promise<Metadata> {

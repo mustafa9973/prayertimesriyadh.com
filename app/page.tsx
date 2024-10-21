@@ -1,11 +1,13 @@
 import { Metadata } from "next";
-import DailyPrayers from "./(components)/daily-prayers/dailyPrayers";
-import PrayerTimeAnyDate from "./(components)/prayer-time-on-any-date/PrayerTimeAnyDate";
-import TimeHanlder from "./(components)/timer-handler/time-handler";
 import { AppConstants } from "./AppConstants";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+import DailyPrayers from "./(components)/daily-prayers/dailyPrayers";
 
+// Client Components:
+const TimeHanlder = dynamic(() => import('./(components)/timer-handler/time-handler'))
 
+const PrayerTimeAnyDate = dynamic(() => import('./(components)/prayer-time-on-any-date/PrayerTimeAnyDate'))
 export async function generateMetadata(
 
 ): Promise<Metadata> {
@@ -15,7 +17,7 @@ export async function generateMetadata(
   const school = 0;
   const today=new Date();
   const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/prayer-times-monthly?method=${method}&school=${school}`,{ 
-    next:{revalidate:120}, cache: 'no-store' })
+    cache: 'no-store' })
   const data = await response.json()
   return {
     title: `اوقات الصلاة في الرياض |  ${today.getDate()} ${AppConstants.monthArabic[data?.formattedTodayData?.month]} ${today.getFullYear()} `,

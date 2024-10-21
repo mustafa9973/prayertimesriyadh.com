@@ -1,6 +1,6 @@
 "use client";
 import { getNextPrayer } from "@/app/utility";
-import { DateTime, Settings } from "luxon";
+import { DateTime} from "luxon";
 import { useEffect, useState } from "react";
 
 const TimeHandler = (prayerData:any) => {

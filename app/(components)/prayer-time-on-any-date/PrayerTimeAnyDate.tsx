@@ -1,9 +1,7 @@
 "use client"
-
 import { AppConstants } from "@/app/AppConstants";
-import { DateTime } from "luxon";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 const PrayerTimeAnyDate = () => {
 
