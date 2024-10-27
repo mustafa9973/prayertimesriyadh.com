@@ -1,4 +1,20 @@
+import { Metadata } from "next";
 import Link from "next/link";
+
+export async function generateMetadata(
+
+): Promise<Metadata> {
+  return {
+  title: "من نحن",
+  description: "من نحن" ,
+  robots:"follow, index,nocache, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  alternates: {
+    canonical: 'https://prayertimesriyadh.com/about-us'
+  },
+  }
+ }
+
+
 
 export default function AboutUs(){
 
