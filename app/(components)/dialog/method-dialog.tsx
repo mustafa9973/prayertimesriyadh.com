@@ -11,11 +11,15 @@ export default function MethodDialog() {
 
   const [method,setMethod] = useState(getCookie("method") || "4");
   const [school,setSchool] = useState(getCookie("school") || "0");
+  const [newMethod,setNewMethod] = useState(method);
+  const [newSchool,setNewSchool] = useState(school);
   const rotuer=useRouter();
 
   const saveCookie = () => {
    setCookie("school",school)
    setCookie("method",method);
+    setMethod(newMethod)
+    setSchool(newSchool)
    setOpen(false);
    rotuer.refresh()
   };
@@ -35,7 +39,7 @@ export default function MethodDialog() {
         <div className="bg-white border-2 border-gray-500 p-6 top-52 rounded-lg max-w-md w-full shadow-lg">
           <span className="text-2xl text-center font-bold mb-4 block">تغيير الاعدادات</span>
           <label className="block" htmlFor="prayer-method">اختر طريقة الحساب:</label>
-          <select id="prayer-method" onChange={(e)=> setMethod(e.target.value)} value={method} className="border w-4/6 border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:border-blue-500">
+          <select id="prayer-method" onChange={(e)=> setNewMethod(e.target.value)} value={newMethod} className="border w-4/6 border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:border-blue-500">
 
           {Array.from(AppConstants.methods).map(([key, value]) => (
     <option key={key} value={key}>
@@ -49,7 +53,7 @@ export default function MethodDialog() {
 
           <div className="my-4">
           <label className="block" htmlFor="school">اختر المدرسة:</label>
-          <select id="school" onChange={(e)=> setSchool(e.target.value)} value={school} className="border w-4/6 border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:border-blue-500">
+          <select id="school" onChange={(e)=> setNewSchool(e.target.value)} value={newSchool} className="border w-4/6 border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:border-blue-500">
           {Array.from(AppConstants.school).map(([key, value]) => (
     <option key={key} value={key}>
         {value}

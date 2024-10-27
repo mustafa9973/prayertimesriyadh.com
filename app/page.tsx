@@ -28,7 +28,7 @@ export async function generateMetadata(
 
     openGraph: {
       title: "اوقات الصلاة في مدينة الرياض",
-      images: ['/img/prayer-times-riyadh.webp'],
+      images: ['https://prayertimesriyadh.com/img/prayer-times-riyadh.webp'],
       url: 'https://prayertimesriyadh.com',
       siteName: 'اوقات الصلاة في الرياض',
       locale: 'ar_SA',
