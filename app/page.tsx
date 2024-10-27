@@ -1,9 +1,10 @@
 import { Metadata } from "next";
+import { cookies } from 'next/headers'
 import { AppConstants } from "./AppConstants";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import DailyPrayers from "./(components)/daily-prayers/dailyPrayers";
-
+import MethodDialog from "./(components)/dialog/method-dialog";
 // Client Components:
 const TimeHanlder = dynamic(() => import('./(components)/timer-handler/time-handler'))
 
@@ -14,13 +15,13 @@ export async function generateMetadata(
 
 ): Promise<Metadata> {
 
-
-  const method = 4;
-  const school = 0;
-  const today = new Date();
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/prayer-times-monthly?method=${method}&school=${school}`, {
-    cache: 'no-store'
-  })
+ 
+  const method =cookies().get('method')?.value || 4;
+  const school = cookies().get('school')?.value || 0;
+ 
+  const today=new Date();
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/prayer-times-monthly?method=${method}&school=${school}`,{ 
+    cache: 'no-store' })
   const data = await response.json()
   return {
     title: `اوقات الصلاة في الرياض |  ${today.getDate()} ${AppConstants.monthArabic[data?.formattedTodayData?.month]} ${today.getFullYear()} `,
@@ -46,12 +47,12 @@ export async function generateMetadata(
 export default async function Home() {
 
 
-
-  const method = 4;
-  const school = 0;
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/prayer-times-monthly?method=${method}&school=${school}`, {
-    cache: 'no-store'
-  })
+  
+ 
+  const method =cookies().get('method')?.value || 4;
+  const school = cookies().get('school')?.value || 0;
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/prayer-times-monthly?method=${method}&school=${school}`,{ 
+    cache: 'no-store' })
 
   const dynamic = 'force-dynamic'
   const data = await response.json()
@@ -70,11 +71,7 @@ export default async function Home() {
         <DailyPrayers data={data}></DailyPrayers>
 
 
-        <div className="flex mt-5">
-          <div>
-            طريقة الحساب :{AppConstants.methods.get(method)}, {AppConstants.school.get(school)}
-          </div>
-        </div>
+  <MethodDialog  ></MethodDialog>
 
       </div>
 

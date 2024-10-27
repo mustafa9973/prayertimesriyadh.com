@@ -28,7 +28,9 @@ body {
 
 
 
-
+.z-index-200{
+  z-index: 200;
+}
 p{
   line-height: 30px;
 }
