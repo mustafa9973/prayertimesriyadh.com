@@ -18,7 +18,6 @@ export async function GET(request: NextRequest) {
     cache: 'no-store'
   })
 
-
   const json = await res.json()
   const data: [] = json.data
   let todaysData;
