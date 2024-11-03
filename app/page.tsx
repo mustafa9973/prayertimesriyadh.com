@@ -1,3 +1,4 @@
+
 import { Metadata } from "next";
 import { cookies } from 'next/headers'
 import { AppConstants } from "./AppConstants";
@@ -5,6 +6,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import DailyPrayers from "./(components)/daily-prayers/dailyPrayers";
 import MethodDialog from "./(components)/dialog/method-dialog";
+import Faqs from "./(components)/faqs/faqs";
 // Client Components:
 const TimeHanlder = dynamic(() => import('./(components)/timer-handler/time-handler'))
 
@@ -202,7 +204,7 @@ export default async function Home() {
     <Image className="object-contain w-full" width={300} height={300} src="/img/m1.webp" alt="جامع الإمام تركي بن عبد الله"  />
   </div>
   <div className="flex flex-col mt-3 md:mt-0">
-    <div className="font-bold text-xl mb-2">جامع الإمام تركي بن عبد الله</div>
+    <div className="font-bold text-xl my-3">جامع الإمام تركي بن عبد الله</div>
     <div>جامع الإمام تركي بن عبد الله (بالإنجليزية: Imam Turki bin Abdullah Mosque)، المعروف أيضًا بالمسجد الكبير في الرياض، هو مسجد جامع ويقع في 2879 شارع الإمام تركي بن ​​عبدالله بن محمد، الرياض. تبلغ سعته 17,000 مصلٍ، وتبلغ مساحته 16,800 متر مربع. تُقام فيه جميع الفعاليات الدينية.</div>
   </div>
 </div>
@@ -212,7 +214,7 @@ export default async function Home() {
     <Image className="object-contain w-full" width={300} height={300} src="/img/m2.webp" alt="مسجد حصة بنت نصر الراجحي" />
   </div>
   <div className="flex flex-col mt-3 md:mt-0">
-    <div className="font-bold text-xl mb-2">مسجد حصة بنت نصر الراجحي</div>
+    <div className="font-bold text-xl my-3">مسجد حصة بنت نصر الراجحي</div>
     <div>يقع جامع الأحساء الراجحي في RHF7 + WMX ، حي القيروان ، الرياض 13533 ، ويتسع ل 3000 مصلي. يتميز المسجد بمرافق منفصلة ووضوء ومراحيض للرجال والنساء. تقام الصلوات المفروضة يوميا في الجماعة. بالإضافة إلى ذلك ، تقام صلاة العيد وصلاة الجمعة وصلاة التراويح في المناسبات المعنية.</div>
   </div>
 </div>
@@ -222,7 +224,7 @@ export default async function Home() {
     <Image className="object-contain w-full" width={365} height={300} src="/img/m3.webp" alt="مسجد مركز الملك عبدالله المالي" />
   </div>
   <div className="flex flex-col mt-3 md:mt-0">
-    <div className="font-bold text-xl mb-2">مسجد مركز الملك عبدالله المالي</div>
+    <div className="font-bold text-xl my-3">مسجد مركز الملك عبدالله المالي</div>
     <div>هذا المسجد الرائع، الواقع في حي قرطبة، الرياض 13248، يدعو الرجال والنساء والأطفال من جميع الأعمار لأداء صلاة العيد والجمعة. يشتهر المسجد بتفانيه في التنوع بالإضافة إلى هندسته المعمارية المذهلة. تُعرض جميع الخطب التي تُلقى خلال صلاة الجمعة على شاشة كبيرة لتمكين الجميع من الاستمتاع بها، مع توفر ترجمات باللغتين الإنجليزية والأردية وحتى بلغة الإشارة</div>
   </div>
 </div>
@@ -232,7 +234,7 @@ export default async function Home() {
     <Image className="object-contain w-full" width={310} height={300} src="/img/m4.webp" alt="جامع والدة الأمير مقرن بن عبدالعزيز آل سعود" />
   </div>
   <div className="flex flex-col mt-3 md:mt-0">
-    <div className="font-bold text-xl mb-2">جامع والدة الأمير مقرن بن عبدالعزيز آل سعود</div>
+    <div className="font-bold text-xl my-3">جامع والدة الأمير مقرن بن عبدالعزيز آل سعود</div>
     <div>يعد مسجد الأمير مقرن الأم، الواقع غرب حي الملقا على طريق أنس بن مالك شمال الرياض، مثالا رئيسيا على البناء الحديث الممزوج بالتصميم الإسلامي التقليدي. القباب المنحوتة بشكل متقن والبوابات الضخمة هي مجرد أمثلة على روعتها الخارجية والداخلية. يتم أداء جميع الصلوات المفروضة والواجبة هنا في جماعة</div>
   </div>
 </div>
@@ -242,7 +244,7 @@ export default async function Home() {
     <Image className="object-contain w-full" width={460} height={300} src="/img/m5.webp" alt="مسجد الأميرة موضي الأنقري الكبير" />
   </div>
   <div className="flex flex-col mt-3 md:mt-0">
-    <div className="font-bold text-xl mb-2">مسجد الأميرة موضي الأنقري الكبير</div>
+    <div className="font-bold text-xl my-3">مسجد الأميرة موضي الأنقري الكبير</div>
     <div>يقع مسجد الأميرة موضي الأنقري الكبير في QMGV+9CG، حي التعاون، الرياض 12477. يفتح المسجد أبوابه في الساعة 4 صباحًا ويغلق في الساعة 8 مساءً. هذا المسجد الواسع هو مثال رائع على العمارة الإسلامية. في الداخل، يُستقبل المصلون بمساحة فسيحة ونظيفة للغاية تفوح منها رائحة عطرة. تساهم دورات المياه التي تتم صيانتها جيدًا والمجهزة بموزعات مناديل إلكترونية في تعزيز الراحة العامة، كما أن نظام الصوت الممتاز يجعل الصلاة أكثر متعة</div>
   </div>
 </div>
@@ -286,10 +288,10 @@ export default async function Home() {
     </section>
 
 
+ <div className="text-center text-xl font-bold">أسئلة مكررة </div>
   </div>
 
-
-
+        <Faqs></Faqs>
 
 
 

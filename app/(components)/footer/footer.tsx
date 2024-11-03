@@ -105,9 +105,9 @@ export default function Footer(){
           © {new Date().getFullYear()} <Link href="/ " className="text-white">prayerstimesriyadh.com</Link> 
         </p>
         <div className="order-1 md:order-2">
-          <Link href="about-us" className="px-2 text-gray-400" >About us</Link>
-          <Link href="disclaimer" className="px-2 border-l text-gray-400">Disclaimer</Link>
-          <Link href="privacy-policy" className="px-2 border-l text-gray-400">Privacy Policy</Link>
+          <Link prefetch={true} href="about-us" className="px-2 text-gray-400" >About us</Link>
+          <Link prefetch={true} href="disclaimer" className="px-2 border-l text-gray-400">Disclaimer</Link>
+          <Link prefetch={true} href="privacy-policy" className="px-2 border-l text-gray-400">Privacy Policy</Link>
         </div>
       </div>
     </div>

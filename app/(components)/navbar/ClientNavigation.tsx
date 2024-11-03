@@ -28,6 +28,8 @@ export default function ClientNavigation({ navigation, isMobile = false }: Clien
         <Link
           key={item.name}
           href={item.href}
+          prefetch={true}
+          
           aria-current={pathname === item.href ? 'page' : undefined}
           className={classNames(
             pathname === item.href ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
