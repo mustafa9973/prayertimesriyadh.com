@@ -11,6 +11,8 @@ import Faqs from "./(components)/faqs/faqs";
 const TimeHanlder = dynamic(() => import('./(components)/timer-handler/time-handler'))
 
 const PrayerTimeAnyDate = dynamic(() => import('./(components)/prayer-time-on-any-date/PrayerTimeAnyDate'))
+
+
 export async function generateMetadata(
 
 ): Promise<Metadata> {
@@ -25,19 +27,19 @@ export async function generateMetadata(
   const data = await response.json()
   return {
     title: `اوقات الصلاة في الرياض |  ${today.getDate()} ${AppConstants.monthArabic[data?.formattedTodayData?.month]} ${today.getFullYear()} `,
-    
-      openGraph: {
-        title: "اوقات الصلاة في مدينة الرياض",
-      images:['/img/prayer-times-riyadh.webp'],
-    url: 'https://prayertimesriyadh.com',
-    siteName: 'اوقات الصلاة في الرياض',
-    locale: 'ar_SA',
-    type: 'website',
-  },
-  alternates:{
-    canonical:'https://prayertimesriyadh.com'
-  },
-    robots:"follow, index,nocache, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+
+    openGraph: {
+      title: "اوقات الصلاة في مدينة الرياض",
+      images: ['https://prayertimesriyadh.com/img/prayer-times-riyadh.webp'],
+      url: 'https://prayertimesriyadh.com',
+      siteName: 'اوقات الصلاة في الرياض',
+      locale: 'ar_SA',
+      type: 'website',
+    },
+    alternates: {
+      canonical: 'https://prayertimesriyadh.com'
+    },
+    robots: "follow, index,nocache, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
     description: `أوقات الصلاة في الرياض اليوم تبدأ الساعة ${(data?.formattedTodayData?.timings.Fajr as string).split('(')[0]} صباحا مع أذان الفجر وتنتهي في الساعة ${(data?.formattedTodayData?.timings?.Isha as string).split('(')[0]} صباحا بصلاة العشاء. شروق الشمس الساعة ${(data?.formattedTodayData.timings.Sunrise as string).split('(')[0]} صباحا، وغروب الشمس والأذان المغربي الساعة ${(data?.formattedTodayData?.timings.Maghrib as string).split('(')[0]} مساء.`,
 
   }
@@ -159,17 +161,17 @@ export default async function Home() {
             <h3 className="font-semibold text-md md:text-xl">تحقق من أوقات الصلاة في الرياض</h3>
             <p>نماز هو الركن الأكثر أهمية في الإسلام بعد الإيمان. ومن الواجب على كل مسلم أداء الصلاة خمس مرات في اليوم. ومن الضروري أداء الصلاة في وقتها. يقول الله تعالى في القرآن:</p>
             <p className="text-center my-3"><strong>فَإِذَا قَضَيْتُمُ ٱلصَّلَوٰةَ فَٱذْكُرُوا۟ ٱللَّهَ قِيَـٰمًۭا وَقُعُودًۭا وَعَلَىٰ جُنُوبِكُمْ ۚ فَإِذَا ٱطْمَأْنَنتُمْ فَأَقِيمُوا۟ ٱلصَّلَوٰةَ ۚ إِنَّ ٱلصَّلَوٰةَ كَانَتْ عَلَى ٱلْمُؤْمِنِينَ كِتَـٰبًۭا مَّوْقُوتًۭا (سورة النساء 4:103) </strong> </p>
-                    <div className="flex justify-center">
+            <div className="flex justify-center">
 
-              
-            <Image
+
+              <Image
                 className="my-10"
-                width={500} 
-                height={500} 
+                width={500}
+                height={500}
                 src='/img/prayer-times-riyadh.webp'
-                 alt= 'اوقات الصلاة في مدينة الرياض'
+                alt='اوقات الصلاة في مدينة الرياض'
               />
-                    </div>
+            </div>
             <p>
 
               الوقت مهم جداً عند أداء الصلاة، حيث يجب أداء كل صلاة في وقتها المحدد. على سبيل المثال، يجب أداء صلاة الفجر قبل شروق الشمس، وصلاة المغرب بعد غروب الشمس. كما أن توقيت الصلوات الأخرى محدد أيضاً.
@@ -177,7 +179,7 @@ export default async function Home() {
             </p>
 
             <p>بما أن توقيت الصلاة يعتمد على حركة الشمس التي تتغير بانتظام كل يوم، فإن وقت الصلاة يتغير أيضاً. كما أن توقيت الصلاة يختلف حسب الأماكن.
-هذا الموقع مخصص لمشاركة أوقات الصلاة اليومية في الرياض. يمكنك التحقق من مواقيت الصلاة في الرياض يوميا</p>
+              هذا الموقع مخصص لمشاركة أوقات الصلاة اليومية في الرياض. يمكنك التحقق من مواقيت الصلاة في الرياض يوميا</p>
 
             <h3 className="font-semibold text-md md:text-xl my-3" >قائمة المساجد في الرياض</h3>
             <p>الصلاة في المسجد مع الآخرين مهمة جدًا في الإسلام لأنها تجلب مكافآت عظيمة وتساعد على بناء شعور قوي بالمجتمع. قال النبي محمد (صلى الله عليه وسلم):</p>
@@ -198,7 +200,7 @@ export default async function Home() {
         </div>
       </div>
 
- 
+
       <div className="flex mt-3 bg-white shadow-lg rounded-xl border border-gray-200 p-5 flex-col lg:flex-row">
   <div className="me-5 w-full lg:w-[300px]">
     <Image className="object-contain w-full" width={300} height={300} src="/img/m1.webp" alt="جامع الإمام تركي بن عبد الله"  />
@@ -251,41 +253,21 @@ export default async function Home() {
 
 
 
-<div className=" mt-3 bg-white shadow-lg rounded-xl border border-gray-200 p-5 ">
-    <h2 className="font-semibold text-md md:text-xl mb-4 text-gray-700">تاريخ الرياض الديني: منارة التأثير الإسلامي</h2>
-    
-    <p className="mb-6">تتمتع الرياض، عاصمة المملكة العربية السعودية، بتاريخ ديني غني يتداخل بشكل عميق مع تطور الإسلام في شبه الجزيرة العربية. باعتبارها مركزًا مركزيًا للأنشطة الدينية والسياسية، لعبت الرياض دورًا محوريًا في تشكيل العالم الإسلامي.</p>
+      <div className=" mt-3 bg-white shadow-lg rounded-xl border border-gray-200 p-5 ">
+        <h2 className="font-semibold text-md md:text-xl mb-4 text-gray-700">تاريخ الرياض الديني: منارة التأثير الإسلامي</h2>
 
-    <section className="mb-6">
- 
-      <h3 className="font-semibold text-md md:text-xl text-gray-700 mb-4">الجذور الإسلامية المبكرة</h3>
-      <p className="mb-4">كان سكان المنطقة المحيطة بالرياض من القبائل البدوية الرحل خلال العصر الجاهلي. شكل إدخال الإسلام في القرن السابع الميلادي نقطة تحول مهمة في تاريخ المنطقة. انتشرت توجيهات وتعاليم النبي محمد (صلى الله عليه وسلم) بسرعة، وأصبحت الرياض تدريجيًا مركزًا للتأثير الإسلامي.</p>
+        <p className="mb-6">تتمتع الرياض، عاصمة المملكة العربية السعودية، بتاريخ ديني غني يتداخل بشكل عميق مع تطور الإسلام في شبه الجزيرة العربية. باعتبارها مركزًا مركزيًا للأنشطة الدينية والسياسية، لعبت الرياض دورًا محوريًا في تشكيل العالم الإسلامي.</p>
 
-      <h3 className="font-semibold text-md md:text-xl text-gray-700"> صعود أسرة آل سعود:</h3>
-      <p className=" mb-4">ظهرت عائلة آل سعود، التي أصبحت لاحقًا حكام المملكة العربية السعودية، كقوة قوية في المنطقة خلال القرن الثامن عشر. انضم محمد بن عبد الوهاب، عالم الدين الإسلامي البارز، إلى محمد بن سعود لتأسيس دولة تستند إلى الالتزام الصارم بتعاليم الإسلام. أدى هذا التحالف إلى تشكيل الدولة السعودية الثانية، مع كون الرياض عاصمتها. </p>
-    </section>
+        <section className="mb-6">
 
-    <section className="mb-6">
+          <h3 className="font-semibold text-md md:text-xl text-gray-700 mb-4">الجذور الإسلامية المبكرة</h3>
+          <p className="mb-4">كان سكان المنطقة المحيطة بالرياض من القبائل البدوية الرحل خلال العصر الجاهلي. شكل إدخال الإسلام في القرن السابع الميلادي نقطة تحول مهمة في تاريخ المنطقة. انتشرت توجيهات وتعاليم النبي محمد (صلى الله عليه وسلم) بسرعة، وأصبحت الرياض تدريجيًا مركزًا للتأثير الإسلامي.</p>
 
-      
-      <h3 className="font-semibold text-md md:text-xl text-gray-700 mb-4"> الحركة الوهابية والنهضة الدينية:</h3>
-      <p className="mb-4">لعبت الحركة الوهابية، التي أسسها محمد بن عبد الوهاب، دورًا حاسمًا في تشكيل المشهد الديني في الرياض والمملكة العربية السعودية. أكدت الحركة على تفسير صارم للقرآن والسنة، مشجعة على العودة إلى الشكل النقي من الإسلام. تحت قيادة أسرة آل سعود، نالت الأيديولوجية الوهابية شهرة، وأثرت في الممارسات الدينية والعادات الاجتماعية للشعب </p>
+          <h3 className="font-semibold text-md md:text-xl text-gray-700"> صعود أسرة آل سعود:</h3>
+          <p className=" mb-4">ظهرت عائلة آل سعود، التي أصبحت لاحقًا حكام المملكة العربية السعودية، كقوة قوية في المنطقة خلال القرن الثامن عشر. انضم محمد بن عبد الوهاب، عالم الدين الإسلامي البارز، إلى محمد بن سعود لتأسيس دولة تستند إلى الالتزام الصارم بتعاليم الإسلام. أدى هذا التحالف إلى تشكيل الدولة السعودية الثانية، مع كون الرياض عاصمتها. </p>
+        </section>
 
-      <h3 className="font-semibold text-md md:text-xl text-gray-700 mb-4">الرياض كمركز للتعليم الإسلامي:</h3>
-      <p className="text-lg mb-4">تعتبر الرياض منذ فترة طويلة مركزًا للتعليم الإسلامي والدراسة. تم تأسيس العديد من المدارس والجامعات الدينية في المدينة، مما جذب طلابًا من جميع أنحاء العالم. تقع في الرياض جامعة الإمام محمد بن سعود الإسلامية، واحدة من أكبر الجامعات الإسلامية في العالم، وتقدم مجموعة واسعة من برامج الدراسات الإسلامية.</p>
-
-      <h3 className="font-semibold text-md md:text-xl text-gray-700">الممارسات الدينية في العصر الحديث:</h3>
-      <p className="text-lg mb-4">اليوم، لا تزال الرياض مدينة دينية عميقة، حيث يتجذر الإسلام في الحياة اليومية لسكانها. تحتضن المدينة العديد من المساجد، بما في ذلك المسجد الكبير، الذي يُعتبر من أكبر المساجد في العالم. تُلتزم الممارسات الدينية بصرامة، وتلعب الحكومة السعودية دورًا مهمًا في تعزيز القيم والتقاليد الإسلامية.</p>
-    </section>
-
-    <section className="mb-6">
-
-      
-      <h3 className="font-semibold text-md md:text-xl text-gray-700">الخاتمة:</h3>
-      <p className="text-lg mb-4">يعتبر تاريخ الرياض الديني شهادة على الاتصال الدائم للمدينة بالإسلام. من جذورها الإسلامية المبكرة إلى دورها كعاصمة للدولة السعودية الثانية ومركز للأيديولوجية الوهابية، لعبت الرياض دورًا حيويًا في تشكيل العالم الإسلامي. تستمر التراث الديني الغني للمدينة في التأثير على ثقافتها ومجتمعها وهويتها اليوم</p>
-
- 
-    </section>
+     
 
 
  <div className="text-center text-xl font-bold">أسئلة مكررة </div>
