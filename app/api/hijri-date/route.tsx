@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
 
       const riyadhDate = DateTime.now().setZone(timeZone).toJSDate();
 
-    const res = await fetch(`https://api.aladhan.com/v1/gToHCalendar/${ riyadhDate.getMonth()+1}/${riyadhDate.getFullYear()}?adjustment=1`, { 
+    const res = await fetch(`https://api.aladhan.com/v1/gToHCalendar/${ riyadhDate.getMonth()+1}/${riyadhDate.getFullYear()}?adjustment=0`, { 
      cache: 'no-store' })
 
 

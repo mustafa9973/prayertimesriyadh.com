@@ -22,11 +22,11 @@ export async function generateMetadata(
 
         openGraph: {
             title: "تاريخ اليوم هجري |  تحويل التاريخ من هجري الى ميلادي",
-            images: ['/img/prayer-times-riyadh.webp'],
+            images: ['https://prayertimesriyadh.com/img/prayer-times-riyadh.webp'],
             url: 'https://prayertimesriyadh.com/hijri-date',
             siteName: 'اوقات الصلاة في الرياض',
             locale: 'ar_SA',
-            type: 'website',
+            type: 'article',
         },
         alternates: {
             canonical: 'https://prayertimesriyadh.com/hijri-date'
