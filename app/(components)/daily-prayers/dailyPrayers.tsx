@@ -55,7 +55,7 @@ const DailyPrayers=async (prayerData:any)=>{
     </h2>
   <p>
     
-   <strong> اوقات الصلاة في الرياض اليوم</strong> (الميلادي: {`${today.getDate()} ${monthArabic[data.month]} ${today.getFullYear()}`} ، <Link href='hijri-date'>الهجري</Link>: {`${data.hijriDate} ${data.hijriMonth} ${data.hijriYear}`})   تبدأ الساعة {(data?.timings.Fajr as string).split('(')[0]} صباحا مع أذان الفجر وتنتهي في الساعة {(data?.timings.Isha as string).split('(')[0]} صباحا بصلاة العشاء. شروق الشمس الساعة {(data?.timings.Sunrise as string).split('(')[0]} صباحا ، وغروب الشمس و<strong>  الأذان المغربي  </strong> الساعة {(data?.timings.Maghrib as string).split('(')[0]} مساء.
+   <strong><a href="https://prayertimesriyadh.com/"> اوقات الصلاة في الرياض اليوم </a></strong> (الميلادي: {`${today.getDate()} ${monthArabic[data.month]} ${today.getFullYear()}`} ، <Link href='hijri-date'>الهجري</Link>: {`${data.hijriDate} ${data.hijriMonth} ${data.hijriYear}`})   تبدأ الساعة {(data?.timings.Fajr as string).split('(')[0]} صباحا مع أذان الفجر وتنتهي في الساعة {(data?.timings.Isha as string).split('(')[0]} صباحا بصلاة العشاء. شروق الشمس الساعة {(data?.timings.Sunrise as string).split('(')[0]} صباحا ، وغروب الشمس و<strong>  الأذان المغربي  </strong> الساعة {(data?.timings.Maghrib as string).split('(')[0]} مساء.
 
    وفقا لتوقيت الوقت الحالي في الرياض ، ستكون الصلاة القادمة {map[(data?.nextPrayer as string)]?.name} ، وستكون الأذان الساعة {(data?.timings[data?.nextPrayer ] as string).split('(')[0]} صباحا.
 
