@@ -26,13 +26,13 @@ export async function generateMetadata(
     cache: 'no-store' })
   const data = await response.json()
   return {
-    title: `اوقات الصلاة في الرياض |  ${today.getDate()} ${AppConstants.monthArabic[data?.formattedTodayData?.month]} ${today.getFullYear()} `,
+    title: `مواقيت الصلاة في الرياض |  ${today.getDate()} ${AppConstants.monthArabic[data?.formattedTodayData?.month]} ${today.getFullYear()} `,
 
     openGraph: {
-      title: "اوقات الصلاة في مدينة الرياض",
+      title: "مواقيت الصلاة في الرياض",
       images: ['https://prayertimesriyadh.com/img/prayer-times-riyadh.webp'],
       url: 'https://prayertimesriyadh.com',
-      siteName: 'اوقات الصلاة في الرياض',
+      siteName: 'مواقيت الصلاة في الرياض',
       locale: 'ar_SA',
       type: 'website',
     },
@@ -40,7 +40,7 @@ export async function generateMetadata(
       canonical: 'https://prayertimesriyadh.com'
     },
     robots: "follow, index,nocache, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
-    description: `أوقات الصلاة في الرياض اليوم تبدأ الساعة ${(data?.formattedTodayData?.timings.Fajr as string).split('(')[0]} صباحا مع أذان الفجر وتنتهي في الساعة ${(data?.formattedTodayData?.timings?.Isha as string).split('(')[0]} صباحا بصلاة العشاء. شروق الشمس الساعة ${(data?.formattedTodayData.timings.Sunrise as string).split('(')[0]} صباحا، وغروب الشمس والأذان المغربي الساعة ${(data?.formattedTodayData?.timings.Maghrib as string).split('(')[0]} مساء.`,
+    description: `مواقيت الصلاة في الرياض اليوم تبدأ الساعة ${(data?.formattedTodayData?.timings.Fajr as string).split('(')[0]} صباحا مع أذان الفجر وتنتهي في الساعة ${(data?.formattedTodayData?.timings?.Isha as string).split('(')[0]} صباحا بصلاة العشاء.`,
 
   }
 }
@@ -67,7 +67,7 @@ export default async function Home() {
     <>
 
       <div className="bg-white text-black p-2 rounded-xl shadow-md flex flex-col">
-        <h1 className="text-center text-lg md:text-2xl  font-bold ">اوقات الصلاة في مدينة الرياض</h1>
+        <h1 className="text-center text-lg md:text-2xl  font-bold ">مواقيت الصلاة في الرياض</h1>
         <TimeHanlder data={data}></TimeHanlder>
 
         <DailyPrayers data={data}></DailyPrayers>

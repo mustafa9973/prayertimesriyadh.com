@@ -21,8 +21,8 @@ const DailyPrayers=async (prayerData:any)=>{
  const eventLd =    {
   "@context": "https://schema.org/",
   "@type": "Event",
-  "name": `اوقات الصلاة في الرياض اليوم - ${day}-${month}-${year}`,
-  "description": `أوقات الصلاة في الرياض اليوم تبدأ الساعة ${(data?.timings.Fajr as string).split('(')[0]} صباحا مع أذان الفجر وتنتهي في الساعة ${(data?.timings?.Isha as string).split('(')[0]} صباحا بصلاة العشاء. شروق الشمس الساعة ${(data?.timings.Sunrise as string).split('(')[0]} صباحا، وغروب الشمس والأذان المغربي الساعة ${(data?.timings.Maghrib as string).split('(')[0]} مساء.`,
+  "name": `مواقيت الصلاة في الرياض  - ${day}-${month}-${year}`,
+  "description": `مواقيت الصلاة في الرياض اليوم  تبدأ الساعة ${(data?.timings.Fajr as string).split('(')[0]} صباحا مع أذان الفجر وتنتهي في الساعة ${(data?.timings?.Isha as string).split('(')[0]} صباحا بصلاة العشاء. شروق الشمس الساعة ${(data?.timings.Sunrise as string).split('(')[0]} صباحا، وغروب الشمس والأذان المغربي الساعة ${(data?.timings.Maghrib as string).split('(')[0]} مساء.`,
   "startDate": `${year}-${month}-${day}T${(data?.timings.Fajr as string).split('(')[0]}&#x2B;03:00`,
   "endDate": `${year}-${month}-${day}T${(data?.timings.Isha as string).split('(')[0]}&#x2B;03:00`,
   "location": "الرياض - السعودية",
@@ -55,9 +55,9 @@ const DailyPrayers=async (prayerData:any)=>{
     </h2>
   <p>
     
-   <strong><a href="https://prayertimesriyadh.com/"> اوقات الصلاة في الرياض اليوم </a></strong> (الميلادي: {`${today.getDate()} ${monthArabic[data.month]} ${today.getFullYear()}`} ، <Link href='hijri-date'>الهجري</Link>: {`${data.hijriDate} ${data.hijriMonth} ${data.hijriYear}`})   تبدأ الساعة {(data?.timings.Fajr as string).split('(')[0]} صباحا مع أذان الفجر وتنتهي في الساعة {(data?.timings.Isha as string).split('(')[0]} صباحا بصلاة العشاء. شروق الشمس الساعة {(data?.timings.Sunrise as string).split('(')[0]} صباحا ، وغروب الشمس و<strong>  الأذان المغربي  </strong> الساعة {(data?.timings.Maghrib as string).split('(')[0]} مساء.
+   <strong><a href="https://prayertimesriyadh.com/"> مواقيت الصلاة في الرياض اليوم </a></strong> (الميلادي: {`${today.getDate()} ${monthArabic[data.month]} ${today.getFullYear()}`} ، <Link href='hijri-date'>الهجري</Link>: {`${data.hijriDate} ${data.hijriMonth} ${data.hijriYear}`})   تبدأ الساعة {(data?.timings.Fajr as string).split('(')[0]} صباحا مع أذان الفجر وتنتهي في الساعة {(data?.timings.Isha as string).split('(')[0]} صباحا بصلاة العشاء. شروق الشمس الساعة {(data?.timings.Sunrise as string).split('(')[0]} صباحا ، وغروب الشمس و<strong>  الأذان المغربي  </strong> الساعة {(data?.timings.Maghrib as string).split('(')[0]} مساء.
 
-   وفقا لتوقيت الوقت الحالي في الرياض ، ستكون الصلاة القادمة {map[(data?.nextPrayer as string)]?.name} ، وستكون الأذان الساعة {(data?.timings[data?.nextPrayer ] as string).split('(')[0]} صباحا.
+   وفقا لتوقيت الوقت الحالي في الرياض ، ستكون الصلاة القادمة  {map[(data?.nextPrayer as string)]?.name} ، وستكون الأذان الساعة {(data?.timings[data?.nextPrayer ] as string).split('(')[0]} صباحا.
 
 
 </p>
