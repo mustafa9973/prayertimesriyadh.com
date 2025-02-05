@@ -40,7 +40,7 @@ const PrayerTimeAnyDate = () => {
         <>
             <div className="flex  flex-col mt-3 bg-white shadow-lg rounded-xl border border-gray-200 p-5 ">
                 <div className="flex">
-                    <h3 className="font-semibold text-md md:text-xl">تحقق من أوقات الصلاة في أي تاريخ في الرياض</h3>
+                    <h2 className="font-semibold text-md md:text-xl">تحقق من أوقات الصلاة في أي تاريخ في الرياض</h2>
                 </div>
 
 

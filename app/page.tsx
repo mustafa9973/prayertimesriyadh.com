@@ -158,7 +158,7 @@ export default async function Home() {
         <div className="flex flex-col justify-center h-full">
           <div className="w-full mx-auto bg-white shadow-lg rounded-xl border border-gray-200 p-4">
 
-            <h3 className="font-semibold text-md md:text-xl">تحقق من أوقات الصلاة في الرياض</h3>
+            <h2 className="font-semibold text-md md:text-xl">تحقق من مواقيت الصلاة في الرياض</h2>
             <p>نماز هو الركن الأكثر أهمية في الإسلام بعد الإيمان. ومن الواجب على كل مسلم أداء الصلاة خمس مرات في اليوم. ومن الضروري أداء الصلاة في وقتها. يقول الله تعالى في القرآن:</p>
             <p className="text-center my-3"><strong>فَإِذَا قَضَيْتُمُ ٱلصَّلَوٰةَ فَٱذْكُرُوا۟ ٱللَّهَ قِيَـٰمًۭا وَقُعُودًۭا وَعَلَىٰ جُنُوبِكُمْ ۚ فَإِذَا ٱطْمَأْنَنتُمْ فَأَقِيمُوا۟ ٱلصَّلَوٰةَ ۚ إِنَّ ٱلصَّلَوٰةَ كَانَتْ عَلَى ٱلْمُؤْمِنِينَ كِتَـٰبًۭا مَّوْقُوتًۭا (سورة النساء 4:103) </strong> </p>
             <div className="flex justify-center">
@@ -177,11 +177,33 @@ export default async function Home() {
               الوقت مهم جداً عند أداء الصلاة، حيث يجب أداء كل صلاة في وقتها المحدد. على سبيل المثال، يجب أداء صلاة الفجر قبل شروق الشمس، وصلاة المغرب بعد غروب الشمس. كما أن توقيت الصلوات الأخرى محدد أيضاً.
 
             </p>
+            <p> 
+            بما أن توقيت الصلاة يعتمد على حركة الشمس التي تتغير بانتظام كل يوم، فإن وقت الصلاة يتغير أيضاً. كما أن توقيت الصلاة يختلف حسب الأماكن. 
+أحد أكثر الطرق ملاءمة للتحقق من مواقيت الصلاة في الرياض هو استخدام موقع PrayerTimesRiyadh.com، وهو موقع مخصص يوفر جداول صلاة دقيقة ومحدثة باستمرار
+        
+             
+           
+              </p>
 
-            <p>بما أن توقيت الصلاة يعتمد على حركة الشمس التي تتغير بانتظام كل يوم، فإن وقت الصلاة يتغير أيضاً. كما أن توقيت الصلاة يختلف حسب الأماكن.
-              هذا الموقع مخصص لمشاركة أوقات الصلاة اليومية في الرياض. يمكنك التحقق من مواقيت الصلاة في الرياض يوميا</p>
+              <h2 className="font-semibold text-md md:text-xl my-3">لماذا تستخدم PrayerTimesRiyadh.com؟</h2>
+        <ul className="mt-2 space-y-2">
+            <li className="bg-gray-200 p-2 rounded-md"><strong>دقة وتحديث مستمر:</strong> يتم تحديث المواقيت يوميًا لضمان الدقة.</li>
+            <li className="bg-gray-200 p-2 rounded-md"><strong>سهولة التصفح:</strong> تصميم بسيط يسمح لأي شخص بالوصول إلى <strong>أذان الرياض</strong> بسرعة.</li>
+            <li className="bg-gray-200 p-2 rounded-md"><strong>لا حاجة لتثبيت تطبيق:</strong> يمكن استخدامه على أي جهاز متصل بالإنترنت.</li>
+            <li className="bg-gray-200 p-2 rounded-md"><strong>ميزات إضافية:</strong> مثل عرض <strong>تاريخ اليوم هجري</strong> واتجاه القبلة والتذكيرات.</li>
+        </ul>
 
-            <h3 className="font-semibold text-md md:text-xl my-3" >قائمة المساجد في الرياض</h3>
+        <h2 className="text-xl font-semibold text-blue-500 mt-4">كيفية معرفة مواقيت الصلاة في الرياض</h2>
+        <ul className="mt-2 space-y-2">
+            <li className="bg-gray-200 p-2 rounded-md">زيارة الموقع: <a href="https://PrayerTimesRiyadh.com" className="text-blue-500 font-semibold">PrayerTimesRiyadh.com</a></li>
+            <li className="bg-gray-200 p-2 rounded-md">عرض جدول الصلاة اليومي لمواقيت الفجر، الظهر، العصر، <strong>أذان المغرب الرياض</strong>، والعشاء.</li>
+            <li className="bg-gray-200 p-2 rounded-md">متابعة التحديثات اليومية.</li>
+            <li className="bg-gray-200 p-2 rounded-md">حفظ الموقع في المتصفح للوصول السريع.</li>
+            <li className="bg-gray-200 p-2 rounded-md">تفعيل التذكيرات (إن وجدت).</li>
+        </ul>
+
+
+            <h2 className="font-semibold text-md md:text-xl my-3" >قائمة المساجد في الرياض</h2>
             <p>الصلاة في المسجد مع الآخرين مهمة جدًا في الإسلام لأنها تجلب مكافآت عظيمة وتساعد على بناء شعور قوي بالمجتمع. قال النبي محمد (صلى الله عليه وسلم):</p>
             <p className="text-center mt-3">
               <strong>عَنْ أَبِي هُرَيْرَةَ قَالَ: قَالَ رَسُولُ اللَّهِ ﷺ: صَلَاةُ الْجَمَاعَةِ تَفْضُلُ صَلَاةَ الْفَرْدِ بِسَبْعٍ وَعِشْرِينَ دَرَجَةً (صحيح البخاري، الكتاب 11، الحديث 618)</strong>
