@@ -16,6 +16,7 @@ export default function Footer(){
       <a
         href="https://www.facebook.com/profile.php?id=61567027712899"
         target="_blank"
+        aria-label="facebook"
         rel="noopener noreferrer"
         className="text-blue-600 hover:text-blue-800 mx-3"
       >
@@ -33,6 +34,7 @@ export default function Footer(){
       <a
         href="https://x.com/prayer_riyadh_1"
         target="_blank"
+        aria-label="X"
         rel="noopener noreferrer"
         className="text-blue-400 hover:text-blue-600"
       >
@@ -50,6 +52,7 @@ export default function Footer(){
       <a
         href="https://www.youtube.com/watch?v=Jv79cnhNRjE"
         target="_blank"
+        aria-label="youtube"
         rel="noopener noreferrer"
         className="text-red-600 hover:text-red-800"
       >
@@ -67,6 +70,7 @@ export default function Footer(){
       <a
         href="https://www.pinterest.com/ghmustafa9973/"
         target="_blank"
+        aria-label="pinterest"
         rel="noopener noreferrer"
         className="text-red-600 hover:text-red-800"
       >

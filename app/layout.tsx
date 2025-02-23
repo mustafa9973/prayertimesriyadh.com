@@ -3,6 +3,7 @@ import { Amiri } from "next/font/google";
 import "./globals.css";
 
 import dynamic from "next/dynamic";
+import Script from "next/script";
 
 const Navbar = dynamic(() => import('./(components)/navbar/navbar'))
 const Footer = dynamic(() => import('./(components)/footer/footer'))
@@ -34,6 +35,11 @@ export default function RootLayout({
 
         {children}
         </div>
+        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8595573554754985"
+     crossOrigin="anonymous" />
+     <Script 
+     async src="https://cdn.jsdelivr.net/npm/lazyhtml@1.2.3/dist/lazyhtml.min.js" crossOrigin="anonymous"
+     />
         <Footer></Footer>
         </body>
     </html>

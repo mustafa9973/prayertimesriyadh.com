@@ -7,6 +7,7 @@ import dynamic from "next/dynamic";
 import DailyPrayers from "./(components)/daily-prayers/dailyPrayers";
 import MethodDialog from "./(components)/dialog/method-dialog";
 import Faqs from "./(components)/faqs/faqs";
+import AdSense from "./(components)/ad-widget/add";
 // Client Components:
 const TimeHanlder = dynamic(() => import('./(components)/timer-handler/time-handler'))
 
@@ -17,13 +18,14 @@ export async function generateMetadata(
 
 ): Promise<Metadata> {
 
- 
-  const method =cookies().get('method')?.value || 4;
+
+  const method = cookies().get('method')?.value || 4;
   const school = cookies().get('school')?.value || 0;
- 
-  const today=new Date();
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/prayer-times-monthly?method=${method}&school=${school}`,{ 
-    cache: 'no-store' })
+
+  const today = new Date();
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/prayer-times-monthly?method=${method}&school=${school}`, {
+    cache: 'no-store'
+  })
   const data = await response.json()
   return {
     title: `مواقيت الصلاة في الرياض |  ${today.getDate()} ${AppConstants.monthArabic[data?.formattedTodayData?.month]} ${today.getFullYear()} `,
@@ -49,12 +51,13 @@ export async function generateMetadata(
 export default async function Home() {
 
 
-  
- 
-  const method =cookies().get('method')?.value || 4;
+
+
+  const method = cookies().get('method')?.value || 4;
   const school = cookies().get('school')?.value || 0;
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/prayer-times-monthly?method=${method}&school=${school}`,{ 
-    cache: 'no-store' })
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/prayer-times-monthly?method=${method}&school=${school}`, {
+    cache: 'no-store'
+  })
 
   const dynamic = 'force-dynamic'
   const data = await response.json()
@@ -69,11 +72,15 @@ export default async function Home() {
       <div className="bg-white text-black p-2 rounded-xl shadow-md flex flex-col">
         <h1 className="text-center text-lg md:text-2xl  font-bold ">مواقيت الصلاة في الرياض</h1>
         <TimeHanlder data={data}></TimeHanlder>
+        <div className="my-3 ad-slot">
 
+          <AdSense adSlot="4306126846" />
+        </div>
         <DailyPrayers data={data}></DailyPrayers>
 
 
-  <MethodDialog  ></MethodDialog>
+        <MethodDialog  ></MethodDialog>
+
 
       </div>
 
@@ -154,6 +161,108 @@ export default async function Home() {
         </div>
       </div>
       <PrayerTimeAnyDate></PrayerTimeAnyDate>
+
+      <div className="text-gray-600 my-5 ">
+        <div className="flex flex-col justify-center h-full">
+          <div className="w-full mx-auto bg-white shadow-lg rounded-xl border border-gray-200 p-4">
+<h2>اذان الرياض</h2>
+
+<p>
+
+<strong>اذان الرياض</strong>
+ هو الأذان الذي يعد جزءًا أساسيًا من الحياة اليومية، حيث يُسمع من المساجد خمس مرات يوميًا للإعلان عن وصول وقت الصلاة. 
+يوفر موقع praytimesriyadh.com أوقات أذان الرياض حسب طريقة الحساب المختارة. يساعد المسلمين على أداء صلواتهم في الأوقات المحددة.
+
+</p>
+
+<h3>  اذان الفجر الرياض </h3>
+
+<p>
+
+<strong>وقت أذان الفجر في الرياض</strong>
+  يبدأ مع طلوع الفجر الصادق، وهو أول صلاة النهار، حيث يستعد المسلمون ليومهم بالوضوء والصلاة. توقيت أذان الفجر في الرياض اليوم هو 
+  {`${(data?.formattedTodayData?.timings.Fajr as string).split('(')[0]}`}
+
+</p>
+
+<h3>  اذان الظهر الرياض </h3>
+
+<p>
+
+<strong>وقت أذان الظهر في الرياض</strong>
+يبدأ وقت صلاة الظهر بعد زوال الشمس ويستمر حتى أذان العصر. اليوم، وقت أذان الظهر في الرياض هو 12:06
+
+  {`${(data?.formattedTodayData?.timings.Dhuhr as string).split('(')[0]}`}
+
+</p>
+
+
+<h3>  اذان العصر الرياض </h3>
+
+<p>
+
+<strong>وقت أذان العصر في الرياض</strong> اليوم،   
+هو
+   {`${(data?.formattedTodayData?.timings.Asr as string).split('(')[0]}`}.
+
+   
+  تختلف المدارس الفكرية في الإسلام حول نقطة البداية الدقيقة لصلاة العصر
+
+
+</p>
+<h4>
+المذاهب الحنفية والحنابلة والشافعية والمالكية
+</h4>
+
+<p>
+  
+<strong>بداية الوقت</strong> : تختلف مذاهب أهل السنة في بداية الوقت. وذهب المالكية والشافعية والحنابلة إلى أنه في الوقت الذي يكون فيه طول ظل أي جسم يساوي طول الشيء نفسه بالإضافة إلى طول ظل ذلك الشيء عند الظهر. الرأي السائد في المذهب الحنفي أنه يبدأ عندما يكون طول ظل أي جسم ضعف طول الجسم بالإضافة إلى طول ظل ذلك الجسم عند الظهر
+
+
+</p>
+
+<p>
+
+انتهاء الوقت: عندما تغرب الشمس تمامًا تحت الأفق. ومع ذلك، فمن المستهجن (والإثم عند المالكية) تأخير الصلاة بدون عذر شرعي إلى وقت النهار الذي تتحول فيه الشمس إلى اللون الأحمر أو البرتقالي الشاحب عند غروبها، على الرغم من أنها لا تزال تعتبر قد صليت في وقتها.
+</p>
+
+<h3>
+ اذان المغرب الرياض
+
+</h3>
+
+<p>
+<strong>وقت أذان العصر في الرياض</strong> اليوم،   
+هو
+   {`${(data?.formattedTodayData?.timings.Maghrib as string).split('(')[0]}`}.
+
+   يُسمع عند غروب الشمس إيذانا ببدء صلاة المغرب. 
+آذان المغرب مهم أيضًا لأنه وقت الإفطار أيضً
+
+
+</p>
+
+<h3>
+ اذان العشاء الرياض
+
+</h3>
+
+<p>
+<strong>وقت أذان العشاء في الرياض</strong> اليوم،   
+هو
+   {`${(data?.formattedTodayData?.timings.Isha as string).split('(')[0]}`}.
+
+
+   <strong>بداية الوقت</strong>  : وفقًا للمذهب الحنفي، يبدأ وقت العشاء عند حلول الظلام الكامل واختفاء الشفق الأبيض من السماء. أما وفقًا للمذاهب المالكية والشافعية والحنبلية، فيبدأ الوقت عند اختفاء الخيط الأحمر من السماء. يمكن تقدير هذه الأوقات باستخدام الشمس كمقياس، حيث يبدأ الوقت عندما تنخفض الشمس 12 درجة تحت الأفق.
+
+
+</p>
+
+
+          </div>
+        </div>
+      </div>
+
       <div className="text-gray-600 my-5 ">
         <div className="flex flex-col justify-center h-full">
           <div className="w-full mx-auto bg-white shadow-lg rounded-xl border border-gray-200 p-4">
@@ -177,30 +286,41 @@ export default async function Home() {
               الوقت مهم جداً عند أداء الصلاة، حيث يجب أداء كل صلاة في وقتها المحدد. على سبيل المثال، يجب أداء صلاة الفجر قبل شروق الشمس، وصلاة المغرب بعد غروب الشمس. كما أن توقيت الصلوات الأخرى محدد أيضاً.
 
             </p>
-            <p> 
-            بما أن توقيت الصلاة يعتمد على حركة الشمس التي تتغير بانتظام كل يوم، فإن وقت الصلاة يتغير أيضاً. كما أن توقيت الصلاة يختلف حسب الأماكن. 
-أحد أكثر الطرق ملاءمة للتحقق من مواقيت الصلاة في الرياض هو استخدام موقع PrayerTimesRiyadh.com، وهو موقع مخصص يوفر جداول صلاة دقيقة ومحدثة باستمرار
-        
-             
-           
-              </p>
+            <p>
+              بما أن توقيت الصلاة يعتمد على حركة الشمس التي تتغير بانتظام كل يوم، فإن وقت الصلاة يتغير أيضاً. كما أن توقيت الصلاة يختلف حسب الأماكن.
+              أحد أكثر الطرق ملاءمة للتحقق من مواقيت الصلاة في الرياض هو استخدام موقع prayertimesriyadh.com، وهو موقع مخصص يوفر جداول صلاة دقيقة ومحدثة باستمرار
 
-              <h2 className="font-semibold text-md md:text-xl my-3">لماذا تستخدم PrayerTimesRiyadh.com؟</h2>
-        <ul className="mt-2 space-y-2">
-            <li className="bg-gray-200 p-2 rounded-md"><strong>دقة وتحديث مستمر:</strong> يتم تحديث المواقيت يوميًا لضمان الدقة.</li>
-            <li className="bg-gray-200 p-2 rounded-md"><strong>سهولة التصفح:</strong> تصميم بسيط يسمح لأي شخص بالوصول إلى <strong>أذان الرياض</strong> بسرعة.</li>
-            <li className="bg-gray-200 p-2 rounded-md"><strong>لا حاجة لتثبيت تطبيق:</strong> يمكن استخدامه على أي جهاز متصل بالإنترنت.</li>
-            <li className="bg-gray-200 p-2 rounded-md"><strong>ميزات إضافية:</strong> مثل عرض <strong>تاريخ اليوم هجري</strong> واتجاه القبلة والتذكيرات.</li>
-        </ul>
 
-        <h2 className="text-xl font-semibold text-blue-500 mt-4">كيفية معرفة مواقيت الصلاة في الرياض</h2>
-        <ul className="mt-2 space-y-2">
-            <li className="bg-gray-200 p-2 rounded-md">زيارة الموقع: <a href="https://PrayerTimesRiyadh.com" className="text-blue-500 font-semibold">PrayerTimesRiyadh.com</a></li>
-            <li className="bg-gray-200 p-2 rounded-md">عرض جدول الصلاة اليومي لمواقيت الفجر، الظهر، العصر، <strong>أذان المغرب الرياض</strong>، والعشاء.</li>
-            <li className="bg-gray-200 p-2 rounded-md">متابعة التحديثات اليومية.</li>
-            <li className="bg-gray-200 p-2 rounded-md">حفظ الموقع في المتصفح للوصول السريع.</li>
-            <li className="bg-gray-200 p-2 rounded-md">تفعيل التذكيرات (إن وجدت).</li>
-        </ul>
+
+            </p>
+
+            <div className="my-4">
+
+              <h2 className="font-semibold text-xl ">لماذا تستخدم prayertimesriyadh.com؟</h2>
+              <ul className="list-disc ps-4 " >
+                <li><strong>دقة وتحديث مستمر:</strong> يتم تحديث المواقيت يوميًا لضمان الدقة.</li>
+                <li>
+
+                  <strong>سهولة التصفح:</strong> تصميم بسيط يسمح لأي شخص بالوصول إلى <strong>أذان الرياض</strong> بسرعة.</li>
+                <li >
+
+
+                  <strong>لا حاجة لتثبيت تطبيق:</strong> يمكن استخدامه على أي جهاز متصل بالإنترنت.</li>
+                <li >
+
+
+                  <strong>ميزات إضافية:</strong> مثل عرض <strong>تاريخ اليوم هجري</strong> واتجاه القبلة والتذكيرات.</li>
+              </ul>
+            </div>
+
+            <h2 className="text-xl font-semibold mt-4 mb-3">كيفية معرفة مواقيت الصلاة في الرياض</h2>
+            <ul className="list-disc ps-4 ">
+              <li >زيارة الموقع: <a href="https://prayertimesriyadh.com" >prayertimesriyadh.com</a></li>
+              <li >عرض جدول الصلاة اليومي لمواقيت الفجر، الظهر، العصر، <strong>أذان المغرب الرياض</strong>، والعشاء.</li>
+              <li >متابعة التحديثات اليومية.</li>
+              <li >حفظ الموقع في المتصفح للوصول السريع.</li>
+              <li >تفعيل التذكيرات (إن وجدت).</li>
+            </ul>
 
 
             <h2 className="font-semibold text-md md:text-xl my-3" >قائمة المساجد في الرياض</h2>
@@ -224,54 +344,54 @@ export default async function Home() {
 
 
       <div className="flex mt-3 bg-white shadow-lg rounded-xl border border-gray-200 p-5 flex-col lg:flex-row">
-  <div className="me-5 w-full lg:w-[300px]">
-    <Image className="object-contain w-full" width={300} height={300} src="/img/m1.webp" alt="جامع الإمام تركي بن عبد الله"  />
-  </div>
-  <div className="flex flex-col mt-3 md:mt-0">
-    <div className="font-bold text-xl my-3">جامع الإمام تركي بن عبد الله</div>
-    <div>جامع الإمام تركي بن عبد الله (بالإنجليزية: Imam Turki bin Abdullah Mosque)، المعروف أيضًا بالمسجد الكبير في الرياض، هو مسجد جامع ويقع في 2879 شارع الإمام تركي بن ​​عبدالله بن محمد، الرياض. تبلغ سعته 17,000 مصلٍ، وتبلغ مساحته 16,800 متر مربع. تُقام فيه جميع الفعاليات الدينية.</div>
-  </div>
-</div>
+        <div className="me-5 w-full lg:w-[300px]">
+          <Image className="object-contain w-full" width={300} height={300} src="/img/m1.webp" alt="جامع الإمام تركي بن عبد الله" />
+        </div>
+        <div className="flex flex-col mt-3 md:mt-0">
+          <div className="font-bold text-xl my-3">جامع الإمام تركي بن عبد الله</div>
+          <div>جامع الإمام تركي بن عبد الله (بالإنجليزية: Imam Turki bin Abdullah Mosque)، المعروف أيضًا بالمسجد الكبير في الرياض، هو مسجد جامع ويقع في 2879 شارع الإمام تركي بن ​​عبدالله بن محمد، الرياض. تبلغ سعته 17,000 مصلٍ، وتبلغ مساحته 16,800 متر مربع. تُقام فيه جميع الفعاليات الدينية.</div>
+        </div>
+      </div>
 
-<div className="flex mt-3 bg-white shadow-lg rounded-xl border border-gray-200 p-5 flex-col lg:flex-row">
-  <div className="me-5 w-full lg:w-[300px]">
-    <Image className="object-contain w-full" width={300} height={300} src="/img/m2.webp" alt="مسجد حصة بنت نصر الراجحي" />
-  </div>
-  <div className="flex flex-col mt-3 md:mt-0">
-    <div className="font-bold text-xl my-3">مسجد حصة بنت نصر الراجحي</div>
-    <div>يقع جامع الأحساء الراجحي في RHF7 + WMX ، حي القيروان ، الرياض 13533 ، ويتسع ل 3000 مصلي. يتميز المسجد بمرافق منفصلة ووضوء ومراحيض للرجال والنساء. تقام الصلوات المفروضة يوميا في الجماعة. بالإضافة إلى ذلك ، تقام صلاة العيد وصلاة الجمعة وصلاة التراويح في المناسبات المعنية.</div>
-  </div>
-</div>
+      <div className="flex mt-3 bg-white shadow-lg rounded-xl border border-gray-200 p-5 flex-col lg:flex-row">
+        <div className="me-5 w-full lg:w-[300px]">
+          <Image className="object-contain w-full" width={300} height={300} src="/img/m2.webp" alt="مسجد حصة بنت نصر الراجحي" />
+        </div>
+        <div className="flex flex-col mt-3 md:mt-0">
+          <div className="font-bold text-xl my-3">مسجد حصة بنت نصر الراجحي</div>
+          <div>يقع جامع الأحساء الراجحي في RHF7 + WMX ، حي القيروان ، الرياض 13533 ، ويتسع ل 3000 مصلي. يتميز المسجد بمرافق منفصلة ووضوء ومراحيض للرجال والنساء. تقام الصلوات المفروضة يوميا في الجماعة. بالإضافة إلى ذلك ، تقام صلاة العيد وصلاة الجمعة وصلاة التراويح في المناسبات المعنية.</div>
+        </div>
+      </div>
 
-<div className="flex mt-3 bg-white shadow-lg rounded-xl border border-gray-200 p-5 flex-col lg:flex-row">
-  <div className="me-5 w-full lg:w-[365px]">
-    <Image className="object-contain w-full" width={365} height={300} src="/img/m3.webp" alt="مسجد مركز الملك عبدالله المالي" />
-  </div>
-  <div className="flex flex-col mt-3 md:mt-0">
-    <div className="font-bold text-xl my-3">مسجد مركز الملك عبدالله المالي</div>
-    <div>هذا المسجد الرائع، الواقع في حي قرطبة، الرياض 13248، يدعو الرجال والنساء والأطفال من جميع الأعمار لأداء صلاة العيد والجمعة. يشتهر المسجد بتفانيه في التنوع بالإضافة إلى هندسته المعمارية المذهلة. تُعرض جميع الخطب التي تُلقى خلال صلاة الجمعة على شاشة كبيرة لتمكين الجميع من الاستمتاع بها، مع توفر ترجمات باللغتين الإنجليزية والأردية وحتى بلغة الإشارة</div>
-  </div>
-</div>
+      <div className="flex mt-3 bg-white shadow-lg rounded-xl border border-gray-200 p-5 flex-col lg:flex-row">
+        <div className="me-5 w-full lg:w-[365px]">
+          <Image className="object-contain w-full" width={365} height={300} src="/img/m3.webp" alt="مسجد مركز الملك عبدالله المالي" />
+        </div>
+        <div className="flex flex-col mt-3 md:mt-0">
+          <div className="font-bold text-xl my-3">مسجد مركز الملك عبدالله المالي</div>
+          <div>هذا المسجد الرائع، الواقع في حي قرطبة، الرياض 13248، يدعو الرجال والنساء والأطفال من جميع الأعمار لأداء صلاة العيد والجمعة. يشتهر المسجد بتفانيه في التنوع بالإضافة إلى هندسته المعمارية المذهلة. تُعرض جميع الخطب التي تُلقى خلال صلاة الجمعة على شاشة كبيرة لتمكين الجميع من الاستمتاع بها، مع توفر ترجمات باللغتين الإنجليزية والأردية وحتى بلغة الإشارة</div>
+        </div>
+      </div>
 
-<div className="flex mt-3 bg-white shadow-lg rounded-xl border border-gray-200 p-5 flex-col lg:flex-row">
-  <div className="me-5 w-full lg:w-[310px]">
-    <Image className="object-contain w-full" width={310} height={300} src="/img/m4.webp" alt="جامع والدة الأمير مقرن بن عبدالعزيز آل سعود" />
-  </div>
-  <div className="flex flex-col mt-3 md:mt-0">
-    <div className="font-bold text-xl my-3">جامع والدة الأمير مقرن بن عبدالعزيز آل سعود</div>
-    <div>يعد مسجد الأمير مقرن الأم، الواقع غرب حي الملقا على طريق أنس بن مالك شمال الرياض، مثالا رئيسيا على البناء الحديث الممزوج بالتصميم الإسلامي التقليدي. القباب المنحوتة بشكل متقن والبوابات الضخمة هي مجرد أمثلة على روعتها الخارجية والداخلية. يتم أداء جميع الصلوات المفروضة والواجبة هنا في جماعة</div>
-  </div>
-</div>
+      <div className="flex mt-3 bg-white shadow-lg rounded-xl border border-gray-200 p-5 flex-col lg:flex-row">
+        <div className="me-5 w-full lg:w-[310px]">
+          <Image className="object-contain w-full" width={310} height={300} src="/img/m4.webp" alt="جامع والدة الأمير مقرن بن عبدالعزيز آل سعود" />
+        </div>
+        <div className="flex flex-col mt-3 md:mt-0">
+          <div className="font-bold text-xl my-3">جامع والدة الأمير مقرن بن عبدالعزيز آل سعود</div>
+          <div>يعد مسجد الأمير مقرن الأم، الواقع غرب حي الملقا على طريق أنس بن مالك شمال الرياض، مثالا رئيسيا على البناء الحديث الممزوج بالتصميم الإسلامي التقليدي. القباب المنحوتة بشكل متقن والبوابات الضخمة هي مجرد أمثلة على روعتها الخارجية والداخلية. يتم أداء جميع الصلوات المفروضة والواجبة هنا في جماعة</div>
+        </div>
+      </div>
 
-<div className="flex mt-3 bg-white shadow-lg rounded-xl border border-gray-200 p-5 flex-col lg:flex-row">
-  <div className="me-5 w-full lg:w-[460px]">
-    <Image className="object-contain w-full" width={460} height={300} src="/img/m5.webp" alt="مسجد الأميرة موضي الأنقري الكبير" />
-  </div>
-  <div className="flex flex-col mt-3 md:mt-0">
-    <div className="font-bold text-xl my-3">مسجد الأميرة موضي الأنقري الكبير</div>
-    <div>يقع مسجد الأميرة موضي الأنقري الكبير في QMGV+9CG، حي التعاون، الرياض 12477. يفتح المسجد أبوابه في الساعة 4 صباحًا ويغلق في الساعة 8 مساءً. هذا المسجد الواسع هو مثال رائع على العمارة الإسلامية. في الداخل، يُستقبل المصلون بمساحة فسيحة ونظيفة للغاية تفوح منها رائحة عطرة. تساهم دورات المياه التي تتم صيانتها جيدًا والمجهزة بموزعات مناديل إلكترونية في تعزيز الراحة العامة، كما أن نظام الصوت الممتاز يجعل الصلاة أكثر متعة</div>
-  </div>
-</div>
+      <div className="flex mt-3 bg-white shadow-lg rounded-xl border border-gray-200 p-5 flex-col lg:flex-row">
+        <div className="me-5 w-full lg:w-[460px]">
+          <Image className="object-contain w-full" width={460} height={300} src="/img/m5.webp" alt="مسجد الأميرة موضي الأنقري الكبير" />
+        </div>
+        <div className="flex flex-col mt-3 md:mt-0">
+          <div className="font-bold text-xl my-3">مسجد الأميرة موضي الأنقري الكبير</div>
+          <div>يقع مسجد الأميرة موضي الأنقري الكبير في QMGV+9CG، حي التعاون، الرياض 12477. يفتح المسجد أبوابه في الساعة 4 صباحًا ويغلق في الساعة 8 مساءً. هذا المسجد الواسع هو مثال رائع على العمارة الإسلامية. في الداخل، يُستقبل المصلون بمساحة فسيحة ونظيفة للغاية تفوح منها رائحة عطرة. تساهم دورات المياه التي تتم صيانتها جيدًا والمجهزة بموزعات مناديل إلكترونية في تعزيز الراحة العامة، كما أن نظام الصوت الممتاز يجعل الصلاة أكثر متعة</div>
+        </div>
+      </div>
 
 
 
@@ -289,13 +409,13 @@ export default async function Home() {
           <p className=" mb-4">ظهرت عائلة آل سعود، التي أصبحت لاحقًا حكام المملكة العربية السعودية، كقوة قوية في المنطقة خلال القرن الثامن عشر. انضم محمد بن عبد الوهاب، عالم الدين الإسلامي البارز، إلى محمد بن سعود لتأسيس دولة تستند إلى الالتزام الصارم بتعاليم الإسلام. أدى هذا التحالف إلى تشكيل الدولة السعودية الثانية، مع كون الرياض عاصمتها. </p>
         </section>
 
-     
 
 
- <div className="text-center text-xl font-bold">أسئلة مكررة </div>
-  </div>
 
-        <Faqs></Faqs>
+        <div className="text-center text-xl font-bold">أسئلة مكررة </div>
+      </div>
+
+      <Faqs></Faqs>
 
 
 

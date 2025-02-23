@@ -43,11 +43,15 @@ const PrayerTimeAnyDate = () => {
                     <h2 className="font-semibold text-md md:text-xl">تحقق من أوقات الصلاة في أي تاريخ في الرياض</h2>
                 </div>
 
-
-                <div className="flex justify-center mt-5">
+      <div className="mt-3">
+        <label htmlFor="date">أدخل التاريخ: </label>
         
+        </div>
+                <div className="flex justify-center mt-3">
+                
                         <input
                             type="date"
+                            id="date"
                             className="p-3 w-3/4 border border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white cursor-pointer"
                             onChange={(e)=>fetchPrayerTime(e)}
                             onClick={(e: any) => e.target.showPicker()}

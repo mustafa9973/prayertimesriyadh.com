@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/timer-handler/time-handler.tsx", "app/(components)/dialog/dialog.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/timer-handler/time-handler.tsx", "app/(components)/dialog/dialog.jsx", "app/(components)/ad-widget/add.jsx"],
   "exclude": ["node_modules"]
 }

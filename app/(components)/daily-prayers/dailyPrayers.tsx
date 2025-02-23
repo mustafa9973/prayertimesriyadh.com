@@ -77,10 +77,10 @@ const DailyPrayers=async (prayerData:any)=>{
                 width={parseInt(prayerInfo.width, 10)} // Convert to number
                 height={parseInt(prayerInfo.height, 10)} // Convert to number
                 src={`/img/${prayer.toLowerCase()}.webp`}
-                 alt= { prayerInfo.name=='الشروق'? 'الشروق' : `أذان ${prayerInfo.name}`}
+                 alt= { prayerInfo.name=='الشروق'? 'الشروق' : `اذان ${prayerInfo.name}`}
               />
             </td>
-            <td className='font-bold'>{prayerInfo.name}</td>
+            <td className='font-bold'>{ prayerInfo.name=='الشروق'? 'الشروق' : `اذان ${prayerInfo.name}`}</td>
             <td className='text-left font-semibold me-2 rounded-bl-lg rounded-tl-lg'>{`${prayerInfo.timeFormat} ${(time as string).split('(')[0]}`}</td>
           </tr>
         );
