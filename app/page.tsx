@@ -71,7 +71,7 @@ export default async function Home() {
     <>
 
       <div className="bg-white text-black p-2 rounded-xl shadow-md flex flex-col">
-        <h1 className="text-center text-xl md:text-3xl  font-bold my-3 ">مواقيت الصلاة في الرياض</h1>
+        
         <h1 className="text-center text-xl md:text-3xl  font-bold my-3 ">مواقيت الصلاة في الرياض</h1>
         <TimeHanlder data={data}></TimeHanlder>
         <div className="my-3 ad-slot">
@@ -92,7 +92,7 @@ export default async function Home() {
         <div className="flex flex-col justify-center h-full">
           <div className="w-full mx-auto bg-white shadow-lg rounded-xl border border-gray-200">
             <header className="px-5 py-4 border-b border-gray-100">
-              <h2 className="font-semibold text-lg md:text-xl text-gray-800 text-center ">
+         
               <h2 className="font-semibold text-lg md:text-xl text-gray-800 text-center ">
                 مواقيت الصلاة في الرياض بقية الشهر- {`${monthArabic[data.formattedTodayData.month]} ${today.getFullYear()}`}
               </h2>
