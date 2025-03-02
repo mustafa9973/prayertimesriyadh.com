@@ -8,6 +8,7 @@ import DailyPrayers from "./(components)/daily-prayers/dailyPrayers";
 import MethodDialog from "./(components)/dialog/method-dialog";
 import Faqs from "./(components)/faqs/faqs";
 import AdSense from "./(components)/ad-widget/add";
+import Link from "next/link";
 // Client Components:
 const TimeHanlder = dynamic(() => import('./(components)/timer-handler/time-handler'))
 
@@ -70,7 +71,7 @@ export default async function Home() {
     <>
 
       <div className="bg-white text-black p-2 rounded-xl shadow-md flex flex-col">
-        <h1 className="text-center text-lg md:text-2xl  font-bold ">مواقيت الصلاة في الرياض</h1>
+        <h1 className="text-center text-xl md:text-3xl  font-bold my-3 ">مواقيت الصلاة في الرياض</h1>
         <TimeHanlder data={data}></TimeHanlder>
         <div className="my-3 ad-slot">
 
@@ -90,7 +91,7 @@ export default async function Home() {
         <div className="flex flex-col justify-center h-full">
           <div className="w-full mx-auto bg-white shadow-lg rounded-xl border border-gray-200">
             <header className="px-5 py-4 border-b border-gray-100">
-              <h2 className="font-semibold text-md md:text-xl text-gray-800 text-center ">
+              <h2 className="font-semibold text-lg md:text-xl text-gray-800 text-center ">
                 مواقيت الصلاة في الرياض بقية الشهر- {`${monthArabic[data.formattedTodayData.month]} ${today.getFullYear()}`}
               </h2>
             </header>
@@ -162,112 +163,207 @@ export default async function Home() {
       </div>
       <PrayerTimeAnyDate></PrayerTimeAnyDate>
 
-      <div className="text-gray-600 my-5 ">
-        <div className="flex flex-col justify-center h-full">
-          <div className="w-full mx-auto bg-white shadow-lg rounded-xl border border-gray-200 p-4">
-<h2>اذان الرياض</h2>
+      <div className="w-full mx-auto p-4 my-4 bg-white shadow-lg rounded-xl border border-gray-200">
+  {/* Header Section */}
+  <div className="my-5 ">
+    <h2 className="text-4xl font-bold text-blue-900 mb-4 text-center ">
+      أذان الرياض
+    </h2>
+    <p className="text-gray-700 leading-relaxed text-lg bg-white p-6 rounded-xl shadow-sm">
+      اذان الرياض هو الأذان الذي يعد جزءًا أساسيًا من الحياة اليومية، حيث يُسمع
+      من المساجد خمس مرات يوميًا للإعلان عن وصول وقت الصلاة. يوفر موقع
+      praytimesriyadh.com أوقات أذان الرياض حسب طريقة الحساب المختارة. يساعد
+      المسلمين على أداء صلواتهم في الأوقات المحددة
+    </p>
+  </div>
 
-<p>
+  <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+  
+    <div className="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-blue-400 relative">
+      <div className="flex items-center gap-3 mb-4">
+       
+        <h3 className="text-xl font-bold text-blue-900">أذان الفجر الرياض</h3>
+      </div>
+      <p className="text-gray-600 mb-2">
+        وقت أذان الفجر في الرياض : يبدأ مع طلوع الفجر الصادق، وهو أول صلاة
+        النهار، حيث يستعد المسلمون ليومهم بالوضوء والصلاة.
 
-<strong>اذان الرياض</strong>
- هو الأذان الذي يعد جزءًا أساسيًا من الحياة اليومية، حيث يُسمع من المساجد خمس مرات يوميًا للإعلان عن وصول وقت الصلاة. 
-يوفر موقع praytimesriyadh.com أوقات أذان الرياض حسب طريقة الحساب المختارة. يساعد المسلمين على أداء صلواتهم في الأوقات المحددة.
+        طلوع الفجر هو بداية نهاية الليل، وظهور أول بياض الفجر. في ذلك الوقت، يمتزج سواد الليل ببياض النهار، معلنًا بزوغ فجرٍ جديد.
+      </p>
+
+      <p className="mt-16 font-bold"> 
+      حَدَّثَنَا عَبْدُ الرَّحْمَنِ بْنُ إِبْرَاهِيمَ الدِّمَشْقِيُّ، حَدَّثَنَا الْوَلِيدُ بْنُ مُسْلِمٍ، حَدَّثَنَا الأَوْزَاعِيُّ، حَدَّثَنَا يَحْيَى بْنُ أَبِي كَثِيرٍ، حَدَّثَنِي مُحَمَّدُ بْنُ إِبْرَاهِيمَ التَّيْمِيُّ، حَدَّثَنِي عِيسَى بْنُ طَلْحَةَ، حَدَّثَتْنِي عَائِشَةُ، قَالَتْ قَالَ رَسُولُ اللَّهِ ـ صلى الله عليه وسلم ـ ‏ "‏ لَوْ يَعْلَمُ النَّاسُ مَا فِي صَلاَةِ الْعِشَاءِ وَصَلاَةِ الْفَجْرِ لأَتَوْهُمَا وَلَوْ حَبْوًا ‏"‏ ‏.‏
+
+
+<Link href="https://sunnah.com/ibnmajah:796">Sunan Ibn Majah 796</Link>
+
+      </p>
+      <div className="bg-blue-50 p-4 rounded-xl mt-12">
+        <span> اليوم، وقت أذان الفجر في الرياض هو </span>
+        <span className="text-2xl font-bold text-blue-700">
+       
+        {`${(data?.formattedTodayData?.timings.Fajr as string).split('(')[0]}  ص`}
+        </span>
+      </div>
+    </div>
+    <>
+  {/* Dhuhr Card */}
+  <div className="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-amber-400 hover:shadow-md transition-shadow duration-200 relative">
+    <div className="flex items-center gap-3 mb-4">
+   
+      <h3 className="text-xl font-bold text-amber-900">أذان الظهر الرياض</h3>
+    </div>
+    <p className="text-gray-600 mb-2">
+      
+    يبدأ وقت الظهر عندما تزول الشمس عن كبد السماء ويستمر حتى يصبح ظل كل شيء مساويًا لطوله، باستثناء الظل عند الظهيرة، أي حتى يدخل وقت العصر. ومع ذلك، يُستحب تأخير صلاة الظهر عن أول وقتها في المسجد عندما يكون الطقس شديد الحرارة، حتى لا يكون ذلك مُشقًا على المصلين عند ذهابهم إلى المسجد
+
+    </p>
+    <p className="mt-10 font-bold">  
+
+    حَدَّثَنَا أَبُو الْوَلِيدِ الطَّيَالِسِيُّ، حَدَّثَنَا شُعْبَةُ، أَخْبَرَنِي أَبُو الْحَسَنِ، - قَالَ أَبُو دَاوُدَ أَبُو الْحَسَنِ هُوَ مُهَاجِرٌ - قَالَ سَمِعْتُ زَيْدَ بْنَ وَهْبٍ، يَقُولُ سَمِعْتُ أَبَا ذَرٍّ، يَقُولُ كُنَّا مَعَ النَّبِيِّ صلى الله عليه وسلم فَأَرَادَ الْمُؤَذِّنُ أَنْ يُؤَذِّنَ الظُّهْرَ فَقَالَ ‏"‏ أَبْرِدْ ‏"‏ ‏.‏ ثُمَّ أَرَادَ أَنْ يُؤَذِّنَ فَقَالَ ‏"‏ أَبْرِدْ ‏"‏ ‏.‏ مَرَّتَيْنِ أَوْ ثَلاَثًا حَتَّى رَأَيْنَا فَىْءَ التُّلُولِ ثُمَّ قَالَ ‏"‏ إِنَّ شِدَّةَ الْحَرِّ مِنْ فَيْحِ جَهَنَّمَ فَإِذَا اشْتَدَّ الْحَرُّ فَأَبْرِدُوا بِالصَّلاَةِ ‏"‏ ‏.‏
+
+
+
+   <Link href="https://sunnah.com/abudawud:401">Sunan Abi Dawud 401</Link> 
+
+    </p>
+    <div className="bg-amber-50 p-4 rounded-xl mt-3">
+      <span>اليوم، وقت أذان الظهر في الرياض هو </span>
+      <span className="text-2xl font-bold text-amber-700">
+      {`${(data?.formattedTodayData?.timings.Dhuhr as string).split('(')[0]}  ص`}
+        </span>
+    </div>
+
+  </div>
+</>
+
+
+<>
+  {/* Asr Card */}
+  <div className="bg-white relative p-6 rounded-2xl shadow-lg border-l-4 border-emerald-400 hover:shadow-md transition-shadow duration-200">
+    <div className="flex items-center gap-3 mb-4">
+  
+      <h2 className="text-xl font-bold text-emerald-900">أذان العصر الرياض</h2>
+    </div>
+    <p className="text-gray-600 mb-2">
+      وقت أذان العصر في الرياض: 
+      
+      يبدأ وقت العصر تقريبًا عندما تكون الشمس في منتصف الطريق بين الظهر والغروب. وتختلف المدارس الفقهية الإسلامية في تحديد بداية وقته؛ فبعضها يرى أنه يبدأ عندما يصبح ظل الشيء مساويًا لطوله الحقيقي بالإضافة إلى ظله عند الظهر، بينما يرى آخرون أنه يبدأ عندما يصبح طول الظل ضعف طول الشيء نفسه.
+    </p>
+    <p className="mt-5 font-bold">  
+
+
+
+    حَدَّثَنَا قُتَيْبَةُ بْنُ سَعِيدٍ، حَدَّثَنَا اللَّيْثُ، عَنِ ابْنِ شِهَابٍ، عَنْ أَنَسِ بْنِ مَالِكٍ، أَنَّهُ أَخْبَرَهُ أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم كَانَ يُصَلِّي الْعَصْرَ وَالشَّمْسُ بَيْضَاءُ مُرْتَفِعَةٌ حَيَّةٌ وَيَذْهَبُ الذَّاهِبُ إِلَى الْعَوَالِي وَالشَّمْسُ مُرْتَفِعَةٌ ‏.‏
+
+<Link href="https://sunnah.com/abudawud:404">Sunan Abi Dawud 404</Link>
+
 
 </p>
 
-<h3>  اذان الفجر الرياض </h3>
+    <div className="bg-emerald-50 p-4 rounded-xl mt-14">
 
-<p>
+    <span>اليوم، وقت أذان العصر في الرياض هو </span>
 
-<strong>وقت أذان الفجر في الرياض</strong>
-  يبدأ مع طلوع الفجر الصادق، وهو أول صلاة النهار، حيث يستعد المسلمون ليومهم بالوضوء والصلاة. توقيت أذان الفجر في الرياض اليوم هو 
-  {`${(data?.formattedTodayData?.timings.Fajr as string).split('(')[0]}`}
-
-</p>
-
-<h3>  اذان الظهر الرياض </h3>
-
-<p>
-
-<strong>وقت أذان الظهر في الرياض</strong>
-يبدأ وقت صلاة الظهر بعد زوال الشمس ويستمر حتى أذان العصر. اليوم، وقت أذان الظهر في الرياض هو 12:06
-
-  {`${(data?.formattedTodayData?.timings.Dhuhr as string).split('(')[0]}`}
-
-</p>
+      <span className="text-2xl font-bold text-emerald-700">
+        
+      {`${(data?.formattedTodayData?.timings.Asr as string).split('(')[0]}  ص`}
+        
+        </span>
+    </div>
+  </div>
+</>
 
 
-<h3>  اذان العصر الرياض </h3>
+<>
+  {/* Maghrib Card */}
+  <div className="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-orange-400 hover:shadow-md transition-shadow duration-200">
+    <div className="flex items-center gap-3 mb-4">
+  
+      <h3 className="text-xl font-bold text-orange-900">أذان المغرب الرياض</h3>
+    </div>
+    <p className="text-gray-600 mb-2">
 
-<p>
+    وفقًا للمسلمين السنة، يبدأ وقت صلاة المغرب مباشرةً بعد غروب الشمس، وذلك بعد صلاة العصر، وينتهي عند بداية الليل، أي عند دخول وقت صلاة العشاء.
 
-<strong>وقت أذان العصر في الرياض</strong> اليوم،   
-هو
-   {`${(data?.formattedTodayData?.timings.Asr as string).split('(')[0]}`}.
+
+    </p>
+    <p className="text-gray-600 text-sm italic mt-2">
+      آذان المغرب مهم أيضًا لأنه وقت الإفطار خلال شهر رمضان المبارك.
+    </p>
+
+    <p className="mt-10 font-bold">  
+    حَدَّثَنَا عَمْرُو بْنُ عَلِيٍّ، عَنْ صَفْوَانَ بْنِ عِيسَى، عَنْ يَزِيدَ بْنِ أَبِي عُبَيْدٍ، عَنْ سَلَمَةَ بْنِ الأَكْوَعِ، قَالَ كَانَ النَّبِيُّ صلى الله عليه وسلم يُصَلِّي الْمَغْرِبَ سَاعَةَ تَغْرُبُ الشَّمْسُ إِذَا غَابَ حَاجِبُهَا ‏.‏
+
+
+<Link href="https://sunnah.com/abudawud:417">Sunan Abi Dawud 417</Link> 
+
+    </p>
+    <div className="bg-orange-50 p-4 rounded-xl mt-16">
+    <span>اليوم، وقت أذان المغرب في الرياض هو </span>
+      <span className="text-2xl font-bold text-orange-700">
+        
+      {`${(data?.formattedTodayData?.timings.Maghrib as string).split('(')[0]}  
+م`}
+        </span>
+    </div>
+
+  </div>
+</>
+
+
+
+<>
+  {/* Isha Card */}
+  <div className="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-indigo-400 hover:shadow-md transition-shadow duration-200">
+
+  <div className="flex items-center gap-3 mb-4">
+  
+  <h3 className="text-xl font-bold text-orange-900">أذان العشاء الرياض</h3>
+</div>
+
+    <p className="text-gray-600 mb-2">
+      وقت أذان العشاء في الرياض:
+      
+      بداية الوقت : وفقًا للمذهب الحنفي، يبدأ وقت العشاء عند حلول الظلام الكامل واختفاء الشفق الأبيض من السماء. أما وفقًا للمذاهب المالكية والشافعية والحنبلية، فيبدأ الوقت عند اختفاء الخيط الأحمر من السماء. يمكن تقدير هذه الأوقات باستخدام الشمس كمقياس، حيث يبدأ الوقت عندما تنخفض الشمس 12 درجة تحت الأفق.
+    </p>
+
+
+    <p className="mt-10 font-bold mb-3">
+
+        حَدَّثَنَا مُسَدَّدٌ، حَدَّثَنَا أَبُو عَوَانَةَ، عَنْ أَبِي بِشْرٍ، عَنْ بَشِيرِ بْنِ ثَابِتٍ، عَنْ حَبِيبِ بْنِ سَالِمٍ، عَنِ النُّعْمَانِ بْنِ بَشِيرٍ، قَالَ أَنَا أَعْلَمُ النَّاسِ، بِوَقْتِ هَذِهِ الصَّلاَةِ صَلاَةِ الْعِشَاءِ الآخِرَةِ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم يُصَلِّيهَا لِسُقُوطِ الْقَمَرِ لِثَالِثَةٍ ‏.‏
+
+        <Link href="https://sunnah.com/abudawud:419">Sunan Abi Dawud 419</Link>
+
+
+
+        </p>
+
+    <div className="bg-indigo-50 p-4 rounded-xl mb-4">
+    <span>اليوم، وقت أذان العشاء في الرياض هو </span>
+      <span className="text-2xl font-bold text-indigo-700">
+        
+      {`${(data?.formattedTodayData?.timings.Isha as string).split('(')[0]}  
+م`}
+        </span>
+    </div>
+
+
+  </div>
+</>
+
+  </div>
+</div>
+
+
 
    
-  تختلف المدارس الفكرية في الإسلام حول نقطة البداية الدقيقة لصلاة العصر
-
-
-</p>
-<h4>
-المذاهب الحنفية والحنابلة والشافعية والمالكية
-</h4>
-
-<p>
-  
-<strong>بداية الوقت</strong> : تختلف مذاهب أهل السنة في بداية الوقت. وذهب المالكية والشافعية والحنابلة إلى أنه في الوقت الذي يكون فيه طول ظل أي جسم يساوي طول الشيء نفسه بالإضافة إلى طول ظل ذلك الشيء عند الظهر. الرأي السائد في المذهب الحنفي أنه يبدأ عندما يكون طول ظل أي جسم ضعف طول الجسم بالإضافة إلى طول ظل ذلك الجسم عند الظهر
-
-
-</p>
-
-<p>
-
-انتهاء الوقت: عندما تغرب الشمس تمامًا تحت الأفق. ومع ذلك، فمن المستهجن (والإثم عند المالكية) تأخير الصلاة بدون عذر شرعي إلى وقت النهار الذي تتحول فيه الشمس إلى اللون الأحمر أو البرتقالي الشاحب عند غروبها، على الرغم من أنها لا تزال تعتبر قد صليت في وقتها.
-</p>
-
-<h3>
- اذان المغرب الرياض
-
-</h3>
-
-<p>
-<strong>وقت أذان العصر في الرياض</strong> اليوم،   
-هو
-   {`${(data?.formattedTodayData?.timings.Maghrib as string).split('(')[0]}`}.
-
-   يُسمع عند غروب الشمس إيذانا ببدء صلاة المغرب. 
-آذان المغرب مهم أيضًا لأنه وقت الإفطار أيضً
-
-
-</p>
-
-<h3>
- اذان العشاء الرياض
-
-</h3>
-
-<p>
-<strong>وقت أذان العشاء في الرياض</strong> اليوم،   
-هو
-   {`${(data?.formattedTodayData?.timings.Isha as string).split('(')[0]}`}.
-
-
-   <strong>بداية الوقت</strong>  : وفقًا للمذهب الحنفي، يبدأ وقت العشاء عند حلول الظلام الكامل واختفاء الشفق الأبيض من السماء. أما وفقًا للمذاهب المالكية والشافعية والحنبلية، فيبدأ الوقت عند اختفاء الخيط الأحمر من السماء. يمكن تقدير هذه الأوقات باستخدام الشمس كمقياس، حيث يبدأ الوقت عندما تنخفض الشمس 12 درجة تحت الأفق.
-
-
-</p>
-
-
-          </div>
-        </div>
-      </div>
 
       <div className="text-gray-600 my-5 ">
         <div className="flex flex-col justify-center h-full">
           <div className="w-full mx-auto bg-white shadow-lg rounded-xl border border-gray-200 p-4">
 
-            <h2 className="font-semibold text-md md:text-xl">تحقق من مواقيت الصلاة في الرياض</h2>
+            <h2 className="font-semibold text-lg md:text-xl">تحقق من مواقيت الصلاة في الرياض</h2>
             <p>نماز هو الركن الأكثر أهمية في الإسلام بعد الإيمان. ومن الواجب على كل مسلم أداء الصلاة خمس مرات في اليوم. ومن الضروري أداء الصلاة في وقتها. يقول الله تعالى في القرآن:</p>
             <p className="text-center my-3"><strong>فَإِذَا قَضَيْتُمُ ٱلصَّلَوٰةَ فَٱذْكُرُوا۟ ٱللَّهَ قِيَـٰمًۭا وَقُعُودًۭا وَعَلَىٰ جُنُوبِكُمْ ۚ فَإِذَا ٱطْمَأْنَنتُمْ فَأَقِيمُوا۟ ٱلصَّلَوٰةَ ۚ إِنَّ ٱلصَّلَوٰةَ كَانَتْ عَلَى ٱلْمُؤْمِنِينَ كِتَـٰبًۭا مَّوْقُوتًۭا (سورة النساء 4:103) </strong> </p>
             <div className="flex justify-center">
