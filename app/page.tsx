@@ -70,11 +70,11 @@ export default async function Home() {
     <>
 
       <div className="bg-white text-black p-2 rounded-xl shadow-md flex flex-col">
-        <h1 className="text-center text-lg md:text-2xl  font-bold ">مواقيت الصلاة في الرياض</h1>
+        <h1 className="text-center text-xl md:text-3xl  font-bold my-3 ">مواقيت الصلاة في الرياض</h1>
         <TimeHanlder data={data}></TimeHanlder>
         <div className="my-3 ad-slot">
 
-          <AdSense adSlot="4306126846" />
+      
         </div>
         <DailyPrayers data={data}></DailyPrayers>
 
@@ -90,7 +90,7 @@ export default async function Home() {
         <div className="flex flex-col justify-center h-full">
           <div className="w-full mx-auto bg-white shadow-lg rounded-xl border border-gray-200">
             <header className="px-5 py-4 border-b border-gray-100">
-              <h2 className="font-semibold text-md md:text-xl text-gray-800 text-center ">
+              <h2 className="font-semibold text-lg md:text-xl text-gray-800 text-center ">
                 مواقيت الصلاة في الرياض بقية الشهر- {`${monthArabic[data.formattedTodayData.month]} ${today.getFullYear()}`}
               </h2>
             </header>
@@ -165,43 +165,39 @@ export default async function Home() {
       <div className="text-gray-600 my-5 ">
         <div className="flex flex-col justify-center h-full">
           <div className="w-full mx-auto bg-white shadow-lg rounded-xl border border-gray-200 p-4">
-<h2>اذان الرياض</h2>
+<h2 className="font-semibold text-xl text-gray-800 text-center mb-5">اذان الرياض</h2>
 
 <p>
-
-<strong>اذان الرياض</strong>
- هو الأذان الذي يعد جزءًا أساسيًا من الحياة اليومية، حيث يُسمع من المساجد خمس مرات يوميًا للإعلان عن وصول وقت الصلاة. 
-يوفر موقع praytimesriyadh.com أوقات أذان الرياض حسب طريقة الحساب المختارة. يساعد المسلمين على أداء صلواتهم في الأوقات المحددة.
-
+<strong> اذان الرياض </strong>  هو الأذان الذي يعد جزءًا أساسيًا من الحياة اليومية، حيث يُسمع من المساجد خمس مرات يوميًا للإعلان عن وصول وقت الصلاة. يوفر موقع praytimesriyadh.com أوقات أذان الرياض حسب طريقة الحساب المختارة. يساعد المسلمين على أداء صلواتهم في الأوقات المحددة
 </p>
 
-<h3>  اذان الفجر الرياض </h3>
+<h3 className="font-semibold text-lg md:text-xl text-gray-700 my-3" >  اذان الفجر الرياض </h3>
 
 <p>
 
-<strong>وقت أذان الفجر في الرياض</strong>
-  يبدأ مع طلوع الفجر الصادق، وهو أول صلاة النهار، حيث يستعد المسلمون ليومهم بالوضوء والصلاة. توقيت أذان الفجر في الرياض اليوم هو 
+
+  يبدأ مع طلوع الفجر الصادق، وهو أول صلاة <strong>وقت أذان الفجر في الرياض</strong>النهار، حيث يستعد المسلمون ليومهم بالوضوء والصلاة. توقيت أذان الفجر في الرياض اليوم هو 
   {`${(data?.formattedTodayData?.timings.Fajr as string).split('(')[0]}`}
 
 </p>
 
-<h3>  اذان الظهر الرياض </h3>
+<h3 className="font-semibold text-lg md:text-xl text-gray-700 my-3">  اذان الظهر الرياض </h3>
 
 <p>
 
 <strong>وقت أذان الظهر في الرياض</strong>
-يبدأ وقت صلاة الظهر بعد زوال الشمس ويستمر حتى أذان العصر. اليوم، وقت أذان الظهر في الرياض هو 12:06
+يبدأ وقت صلاة الظهر بعد زوال الشمس ويستمر حتى أذان العصر. اليوم، وقت أذان الظهر في الرياض هو 
 
   {`${(data?.formattedTodayData?.timings.Dhuhr as string).split('(')[0]}`}
 
 </p>
 
 
-<h3>  اذان العصر الرياض </h3>
+<h3 className="font-semibold text-lg md:text-xl text-gray-700 my-3">  اذان العصر الرياض </h3>
 
 <p>
 
-<strong>وقت أذان العصر في الرياض</strong> اليوم،   
+<strong>وقت أذان العصر في الرياض</strong> اليوم   
 هو
    {`${(data?.formattedTodayData?.timings.Asr as string).split('(')[0]}`}.
 
@@ -210,7 +206,7 @@ export default async function Home() {
 
 
 </p>
-<h4>
+<h4 className="font-semibold text-md md:text-lg text-gray-700 my-3">
 المذاهب الحنفية والحنابلة والشافعية والمالكية
 </h4>
 
@@ -226,7 +222,7 @@ export default async function Home() {
 انتهاء الوقت: عندما تغرب الشمس تمامًا تحت الأفق. ومع ذلك، فمن المستهجن (والإثم عند المالكية) تأخير الصلاة بدون عذر شرعي إلى وقت النهار الذي تتحول فيه الشمس إلى اللون الأحمر أو البرتقالي الشاحب عند غروبها، على الرغم من أنها لا تزال تعتبر قد صليت في وقتها.
 </p>
 
-<h3>
+<h3 className="font-semibold text-lg md:text-xl text-gray-700 my-3">
  اذان المغرب الرياض
 
 </h3>
@@ -242,7 +238,7 @@ export default async function Home() {
 
 </p>
 
-<h3>
+<h3 className="font-semibold text-lg md:text-xl text-gray-700 my-3">
  اذان العشاء الرياض
 
 </h3>
@@ -267,7 +263,7 @@ export default async function Home() {
         <div className="flex flex-col justify-center h-full">
           <div className="w-full mx-auto bg-white shadow-lg rounded-xl border border-gray-200 p-4">
 
-            <h2 className="font-semibold text-md md:text-xl">تحقق من مواقيت الصلاة في الرياض</h2>
+            <h2 className="font-semibold text-lg md:text-xl">تحقق من مواقيت الصلاة في الرياض</h2>
             <p>نماز هو الركن الأكثر أهمية في الإسلام بعد الإيمان. ومن الواجب على كل مسلم أداء الصلاة خمس مرات في اليوم. ومن الضروري أداء الصلاة في وقتها. يقول الله تعالى في القرآن:</p>
             <p className="text-center my-3"><strong>فَإِذَا قَضَيْتُمُ ٱلصَّلَوٰةَ فَٱذْكُرُوا۟ ٱللَّهَ قِيَـٰمًۭا وَقُعُودًۭا وَعَلَىٰ جُنُوبِكُمْ ۚ فَإِذَا ٱطْمَأْنَنتُمْ فَأَقِيمُوا۟ ٱلصَّلَوٰةَ ۚ إِنَّ ٱلصَّلَوٰةَ كَانَتْ عَلَى ٱلْمُؤْمِنِينَ كِتَـٰبًۭا مَّوْقُوتًۭا (سورة النساء 4:103) </strong> </p>
             <div className="flex justify-center">

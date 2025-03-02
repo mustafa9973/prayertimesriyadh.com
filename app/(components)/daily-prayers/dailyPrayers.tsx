@@ -50,7 +50,7 @@ const DailyPrayers=async (prayerData:any)=>{
 
 </div>
 <div className="overflow-x-auto mt-4">
-<h2 className="text-md md:text-xl font-semibold text-gray-700 mb-2">
+<h2 className="text-lg md:text-2xl font-semibold text-gray-700 mb-2">
     اوقات الصلاة في الرياض - {`${today.getDate()} ${monthArabic[data.month]} ${today.getFullYear()}`}
     </h2>
   <p>
