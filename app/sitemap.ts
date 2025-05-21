@@ -15,6 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: 'https://prayertimesriyadh.com/how-prayer-times-are-calculated-in-riyadh',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: 'https://prayertimesriyadh.com/privacy-policy',
       lastModified: new Date(),
       changeFrequency: 'monthly',

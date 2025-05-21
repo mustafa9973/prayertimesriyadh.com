@@ -364,7 +364,7 @@ export default async function Home() {
         <div className="flex flex-col justify-center h-full">
           <div className="w-full mx-auto bg-white shadow-lg rounded-xl border border-gray-200 p-4">
 
-            <h2 className="font-semibold text-lg md:text-xl">تحقق من مواقيت الصلاة في الرياض</h2>
+
             <h2 className="font-semibold text-lg md:text-xl">تحقق من مواقيت الصلاة في الرياض</h2>
             <p>نماز هو الركن الأكثر أهمية في الإسلام بعد الإيمان. ومن الواجب على كل مسلم أداء الصلاة خمس مرات في اليوم. ومن الضروري أداء الصلاة في وقتها. يقول الله تعالى في القرآن:</p>
             <p className="text-center my-3"><strong>فَإِذَا قَضَيْتُمُ ٱلصَّلَوٰةَ فَٱذْكُرُوا۟ ٱللَّهَ قِيَـٰمًۭا وَقُعُودًۭا وَعَلَىٰ جُنُوبِكُمْ ۚ فَإِذَا ٱطْمَأْنَنتُمْ فَأَقِيمُوا۟ ٱلصَّلَوٰةَ ۚ إِنَّ ٱلصَّلَوٰةَ كَانَتْ عَلَى ٱلْمُؤْمِنِينَ كِتَـٰبًۭا مَّوْقُوتًۭا (سورة النساء 4:103) </strong> </p>
@@ -376,7 +376,7 @@ export default async function Home() {
                 width={500}
                 height={500}
                 src='/img/prayer-times-riyadh.webp'
-                alt='اوقات الصلاة في مدينة الرياض'
+                alt='مواقيت الصلاة في الرياض'
               />
             </div>
             <p>
