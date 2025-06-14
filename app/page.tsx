@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 import DailyPrayers from "./(components)/daily-prayers/dailyPrayers";
 import MethodDialog from "./(components)/dialog/method-dialog";
 import Faqs from "./(components)/faqs/faqs";
-import AdSense from "./(components)/ad-widget/add";
+
 import Link from "next/link";
 import { Star, Clock, MapPin, Sun, Moon,Castle ,Building } from "lucide-react";
 // Client Components:
@@ -120,6 +120,7 @@ export default async function Home() {
 
           أهمية معرفة مواقيت الصلاة</h2>
         <p className="mt-3" >
+          تُعتبر الصلاة في أوقاتها المحددة من أركان الإسلام الأساسية، وقد قال الله تعالى: &quot;إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَّوْقُوتًا &quot;. لذلك، فإن معرفة <Link href="/">مواقيت الصلاة في الرياض</Link> بدقة أمر ضروري لكل مسلم يعيش في هذه المدينة المقدسة.
           تُعتبر الصلاة في أوقاتها المحددة من أركان الإسلام الأساسية، وقد قال الله تعالى: &quot;إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَّوْقُوتًا&quot;. لذلك، فإن معرفة <Link href="/">مواقيت الصلاة في الرياض</Link> بدقة أمر ضروري لكل مسلم يعيش في هذه المدينة المقدسة.
         </p>
 
