@@ -50,10 +50,10 @@ const DailyPrayers=async (prayerData:any)=>{
 
 </div>
 <div className="overflow-x-auto mt-4">
-<h2 className="text-lg md:text-2xl font-semibold text-gray-700 mb-2">
+<h2 className="text-lg md:text-2xl font-semibold text-gray-700 mb-2 mx-4">
     اوقات الصلاة في الرياض - {`${today.getDate()} ${monthArabic[data.month]} ${today.getFullYear()}`}
     </h2>
-  <p>
+  <p className="mx-4">
     
    <strong><a href="https://prayertimesriyadh.com/"> مواقيت الصلاة في الرياض اليوم </a></strong> (الميلادي: {`${today.getDate()} ${monthArabic[data.month]} ${today.getFullYear()}`} ، <Link href='hijri-date'>الهجري</Link>: {`${data.hijriDate} ${data.hijriMonth} ${data.hijriYear}`})   تبدأ الساعة {(data?.timings.Fajr as string).split('(')[0]} صباحا مع أذان الفجر وتنتهي في الساعة {(data?.timings.Isha as string).split('(')[0]} صباحا بصلاة العشاء. شروق الشمس الساعة {(data?.timings.Sunrise as string).split('(')[0]} صباحا ، وغروب الشمس و<strong>  الأذان المغربي  </strong> الساعة {(data?.timings.Maghrib as string).split('(')[0]} مساء.
 
@@ -87,6 +87,12 @@ const DailyPrayers=async (prayerData:any)=>{
       })}
     </tbody>
   </table>
+
+  <p className="mt-3 mx-4">
+
+
+  تُعد  <strong>مواقيت الصلاة في الرياض</strong>  من أهم المعلومات التي يحتاجها المسلمون في العاصمة السعودية لأداء فريضة الصلاة في أوقاتها المحددة. في هذا الدليل الشامل، سنتعرف على جميع التفاصيل المتعلقة بـ اوقات الصلاة في الرياض وكيفية حساب مواقيت الأذان بدقة.
+  </p>
 </div>
 <section>
 

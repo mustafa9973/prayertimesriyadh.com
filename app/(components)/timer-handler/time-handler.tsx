@@ -53,27 +53,27 @@ const TimeHandler = (prayerData:any) => {
   return (
     <>
 
- <div className="flex justify-end mt-3">
+ <div className="flex justify-end mx-3">
   <div >
     <span className="font-semibold xs:text-sm md:text-lg">الوقت الأن في الرياض</span> :  
     <span 
       dir="ltr" 
-      className="xs:text-md md:text-lg font-bold text-gray-900 bg-green-200 py-1 px-2 rounded"
+      className="xs:text-md md:text-lg font-bold text-gray-900 bg-green-300 py-1 px-2 rounded me-1"
     >
-      {currentTime}
+      {currentTime} 
     </span>
   </div>
 </div>
-      <div className="flex justify-end mt-4">
+      <div className="flex justify-end my-4 mx-3">
         <div >
         {
   data.nextPrayer === "sunrise" ? (
     <div>
-    <span className="xs:text-sm  md:text-lg font-semibold" >   الوقت المتبقي  {map[data.nextPrayer].name} </span > : <span  className="xs:text-md md:text-lg  font-bold text-gray-900 bg-yellow-200 py-1 px-2 rounded">{remainingTime}</span>
+    <span className="xs:text-sm  md:text-lg font-semibold" >   الوقت المتبقي  {map[data.nextPrayer].name} </span > : <span  className="xs:text-md md:text-lg  font-bold text-gray-900 bg-yellow-200 py-1 ps-[14px] pe-[10px] rounded">{remainingTime}</span>
     </div>
   ) : (
     <div>
-    <span className="xs:text-sm  md:text-lg font-semibold">  الوقت المتبقي لآذان {map[data.nextPrayer].name} </span> : <span  className="xs:text-md md:text-lg  font-bold text-gray-900 bg-yellow-100 py-1 px-2 rounded">{remainingTime}</span>
+    <span className="xs:text-sm  md:text-lg font-semibold">  الوقت المتبقي لآذان {map[data.nextPrayer].name} </span> : <span  className="xs:text-md md:text-lg  font-bold text-gray-900 bg-yellow-200 py-1 ps-[14px] pe-[10px] rounded">{remainingTime}</span>
     </div>
   )
 }
