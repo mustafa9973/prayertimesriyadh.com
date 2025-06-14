@@ -120,7 +120,7 @@ export default async function Home() {
 
           أهمية معرفة مواقيت الصلاة</h2>
         <p className="mt-3" >
-          تُعتبر الصلاة في أوقاتها المحددة من أركان الإسلام الأساسية، وقد قال الله تعالى: "إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَّوْقُوتًا". لذلك، فإن معرفة <Link href="/">مواقيت الصلاة في الرياض</Link> بدقة أمر ضروري لكل مسلم يعيش في هذه المدينة المقدسة.
+          تُعتبر الصلاة في أوقاتها المحددة من أركان الإسلام الأساسية، وقد قال الله تعالى: &quot;إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَّوْقُوتًا&quot;. لذلك، فإن معرفة <Link href="/">مواقيت الصلاة في الرياض</Link> بدقة أمر ضروري لكل مسلم يعيش في هذه المدينة المقدسة.
         </p>
 
         <p>
@@ -349,7 +349,7 @@ export default async function Home() {
       <div className="w-full mx-auto p-4 my-4 bg-white shadow-lg rounded-xl border border-gray-200">
         {/* Header Section */}
         <div className="my-5 ">
-          <h2 className="text-4xl font-bold text-blue-900 mb-4 text-center ">
+          <h2 className="text-4xl font-bold text-blue-900 mb-4 text-center " id="riyadh-azan">
             أذان الرياض
           </h2>
           <p className="text-gray-700 leading-relaxed text-lg bg-white p-6 rounded-xl shadow-sm">
@@ -365,7 +365,7 @@ export default async function Home() {
           <div className="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-blue-400 relative">
             <div className="flex items-center gap-3 mb-4">
 
-              <h3 className="text-xl font-bold text-blue-900">أذان الفجر الرياض</h3>
+              <h3 className="text-xl font-bold text-blue-900" id="azan-fajr">أذان الفجر الرياض</h3>
             </div>
             <p className="text-gray-600 mb-2">
               وقت أذان الفجر في الرياض : يبدأ مع طلوع الفجر الصادق، وهو أول صلاة
@@ -462,7 +462,7 @@ export default async function Home() {
             <div className="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-orange-400 hover:shadow-md transition-shadow duration-200">
               <div className="flex items-center gap-3 mb-4">
 
-                <h3 className="text-xl font-bold text-orange-900">أذان المغرب الرياض</h3>
+                <h3 className="text-xl font-bold text-orange-900" id="azan-maghrib">أذان المغرب الرياض</h3>
               </div>
               <p className="text-gray-600 mb-2">
 

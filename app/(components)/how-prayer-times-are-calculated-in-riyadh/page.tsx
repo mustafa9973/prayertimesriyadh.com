@@ -19,13 +19,7 @@ export default function PrayerTimesCalculation() {
           كيف يتم حساب أوقات الصلاة في الرياض <br /> (ولماذا تتغير يومياً)
         </h1>
         <div className="flex justify-center">
-        <Image
-                className="my-10"
-                width={500}
-                height={500}
-                src='/img/why-prayer-times-change.webp'
-                alt='كيف يتم حساب أوقات الصلاة في الرياض'
-              />
+
               </div>
         <div className="space-y-8">
           {/* Section 1 */}
