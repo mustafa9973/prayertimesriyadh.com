@@ -131,14 +131,7 @@ export default async function HijriDate() {
                     <DateDropdowns data={data} hijri={false}></DateDropdowns>        <div className="text-center text-sm mt-2">هناك احتمال ضئيل لحدوث خطأ ليوم واحد</div>
             </div>
 
-            <Image
-            
-src="/img/hijri_date.webp"
-width={500}
-height={300}
-alt=""
-
-            />
+    
             <div className="text-gray-600 my-5">
                 <div className="flex flex-col justify-center h-full">
                     <div className="w-full mx-auto bg-white shadow-lg rounded-xl border border-gray-200">
