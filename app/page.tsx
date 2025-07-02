@@ -9,7 +9,7 @@ import MethodDialog from "./(components)/dialog/method-dialog";
 import Faqs from "./(components)/faqs/faqs";
 
 import Link from "next/link";
-import { Star, Clock, MapPin, Sun, Moon,Castle ,Building } from "lucide-react";
+import { Star, Clock, MapPin, Sun, Moon,Castle ,Building, Book, Heart, Users } from "lucide-react";
 // Client Components:
 const TimeHanlder = dynamic(() => import('./(components)/timer-handler/time-handler'))
 
@@ -28,9 +28,11 @@ export async function generateMetadata(
   const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/prayer-times-monthly?method=${method}&school=${school}`, {
     cache: 'no-store'
   })
+
+
   const data = await response.json()
   return {
-    title: `مواقيت الصلاة في الرياض |  ${today.getDate()} ${AppConstants.monthArabic[data?.formattedTodayData?.month]} ${today.getFullYear()} `,
+    title: `مواقيت الصلاة في الرياض `,
 
     openGraph: {
       title: "مواقيت الصلاة في الرياض",
@@ -44,7 +46,7 @@ export async function generateMetadata(
       canonical: 'https://prayertimesriyadh.com'
     },
     robots: "follow, index,nocache, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
-    description: `مواقيت الصلاة في الرياض اليوم تبدأ الساعة ${(data?.formattedTodayData?.timings.Fajr as string).split('(')[0]} صباحا مع أذان الفجر وتنتهي في الساعة ${(data?.formattedTodayData?.timings?.Isha as string).split('(')[0]} صباحا بصلاة العشاء.`,
+    description: `تعرف على مواقيت الصلاة في الرياض بدقة يومية، مع تحديثات مستمرة لأذان الرياض لجميع الصلوات الخمس. احصل على مواقيت صلاة الفجر، الظهر، العصر، المغرب، والعشاء`,
 
   }
 }
@@ -66,7 +68,20 @@ export default async function Home() {
   const map: any = AppConstants.prayerMap
   const today = new Date();
   const monthArabic: any = AppConstants.monthArabic
-
+  const fridaySunnahs = [
+    { arabic: "الاغتسال (الغسل)", english: "Take a Bath (Ghusl)" },
+    { arabic: "استخدام السواك لتنظيف الأسنان", english: "Use Siwak to clean your teeth" },
+    { arabic: "ارتداء ملابس نظيفة ومناسبة ويفضل أن تكون جديدة قبل صلاة الجمعة", english: "Wear clean, presentable and preferably new clothes before the Friday prayer" },
+    { arabic: "وضع العطر/ العود", english: "Apply perfume/ Oud" },
+    { arabic: "قص الأظافر", english: "Cut your nails" },
+    { arabic: "قراءة سورة الكهف", english: "Read Surah Al-Kahf" },
+    { arabic: "الإكثار من الصلاة والسلام على النبي محمد (صلى الله عليه وسلم)", english: "Send Durood and Blessings upon the Prophet Muhammad (S.A.W) abundantly" },
+    { arabic: "الإكثار من الدعاء بين العصر والمغرب", english: "Make lots of duas between Asr and Maghreb" },
+    { arabic: "الذهاب إلى المسجد مبكراً قدر الإمكان", english: "Go to the Masjid as early as you can" },
+    { arabic: "المشي إلى المسجد بدلاً من أخذ السيارة", english: "Walk to the Masjid instead of taking the car" },
+    { arabic: "عدم التفريق بين شخصين لعمل مكان لنفسك. اجلس في مكان فارغ", english: "Don't separate two people to make a space for yourself. Sit in an empty space" },
+    { arabic: "الاستماع لخطبة الجمعة بانتباه", english: "Listen to the Khutbah of Jummah (Friday sermon) attentively" }
+  ];
 
   return (
     <>
@@ -121,7 +136,7 @@ export default async function Home() {
           أهمية معرفة مواقيت الصلاة</h2>
         <p className="mt-3" >
           تُعتبر الصلاة في أوقاتها المحددة من أركان الإسلام الأساسية، وقد قال الله تعالى: &quot;إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَّوْقُوتًا &quot;. لذلك، فإن معرفة <Link href="/">مواقيت الصلاة في الرياض</Link> بدقة أمر ضروري لكل مسلم يعيش في هذه المدينة المقدسة.
-          تُعتبر الصلاة في أوقاتها المحددة من أركان الإسلام الأساسية، وقد قال الله تعالى: &quot;إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَّوْقُوتًا&quot;. لذلك، فإن معرفة <Link href="/">مواقيت الصلاة في الرياض</Link> بدقة أمر ضروري لكل مسلم يعيش في هذه المدينة المقدسة.
+          تُعتبر الصلاة في أوقاتها المحددة من أركان الإسلام الأساسية، وقد قال الله تعالى: &quot;إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَّوْقُوتًا&quot;. لذلك، فإن معرفة <Link href="/">اوقات الصلاة الرياض</Link> بدقة أمر ضروري لكل مسلم يعيش في هذه المدينة المقدسة.
         </p>
 
         <p>
@@ -211,11 +226,194 @@ export default async function Home() {
         </div>
       </div>
       <PrayerTimeAnyDate></PrayerTimeAnyDate>
+      <div className="w-full mx-auto p-4 my-4 bg-white shadow-lg rounded-xl border border-gray-200">
+      {/* متى تقام صلاة الجمعة في الرياض */}
+      <div className="container mx-auto px-6 py-12 max-w-6xl">
+        {/* Main content */}
+        <div className="grid lg:grid-cols-2 gap-12 mb-12">
+          {/* Timing Information */}
+          <div className="bg-white rounded-3xl shadow-2xl p-8 border border-emerald-100">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center">
+                <Clock className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-gray-800 mb-2"> متى تقام صلاة الجمعة في الرياض</h2>
+                <p className="text-gray-600">التوقيت والأحكام الشرعية</p>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border-r-4 border-blue-500">
+                <h3 className="text-lg font-bold text-blue-800 mb-3">الوقت الشرعي</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  تصحّ صلاة الجمعة قبل زوال الشمس، لكن الأفضل والأحوط إقامتها بعد الزوال؛ خروجًا من خلاف العلماء. فقد ذهب جمهور العلماء إلى أن وقت الجمعة يبدأ بعد الزوال، وهو الرأي الراجح والمعتمد عند أكثر أهل العلم.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 border-r-4 border-green-500">
+                <h3 className="text-lg font-bold text-green-800 mb-3">التوقيت في الرياض</h3>
+                <div className="space-y-3 text-gray-700">
+                  <p className="leading-relaxed">
+                    تُقام صلاة الجمعة في الرياض عادة في وقت أذان الظهر، ولكن يتم تقديمها قليلاً مقارنة بصلاة الظهر العادية.
+                  </p>
+                  <div className="bg-white rounded-lg p-4 border border-green-200">
+                    <p className="font-semibold text-green-800">موعد الخطبة:</p>
+                    <p>بين الساعة 11:45 صباحًا و12:15 ظهرًا</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-4 border border-amber-200">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Sun className="w-5 h-5 text-amber-600" />
+                    <h4 className="font-bold text-amber-800">الصيف</h4>
+                  </div>
+                  <p className="text-sm text-gray-700">وقت أبكر قليلاً</p>
+                </div>
+                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-200">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Star className="w-5 h-5 text-blue-600" />
+                    <h4 className="font-bold text-blue-800">الشتاء</h4>
+                  </div>
+                  <p className="text-sm text-gray-700">أقرب إلى 12:00 ظهرًا</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Important Notes */}
+          <div className="bg-white rounded-3xl shadow-2xl p-8 border border-teal-100">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-full flex items-center justify-center">
+                <Users className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-gray-800 mb-2">ملاحظات مهمة</h2>
+                <p className="text-gray-600">نصائح للحضور الأمثل</p>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 border-r-4 border-purple-500">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Clock className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-purple-800 mb-1">الوصول المبكر</h4>
+                    <p className="text-gray-700 text-sm">يُفضل الوصول إلى المسجد قبل الساعة 11:30 صباحًا لضمان الحصول على مكان والإنصات للخطبة من بدايتها.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-red-50 to-rose-50 rounded-xl p-4 border-r-4 border-red-500">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Building className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-red-800 mb-1">المساجد الكبرى</h4>
+                    <p className="text-gray-700 text-sm">بعض المساجد الكبرى في الرياض مثل مسجد الراجحي والجامع الكبير تشهد حضورًا كبيرًا، لذا ينصح بالحضور المبكر.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl p-6 text-white">
+                <div className="flex items-center gap-3 mb-3">
+                  <Heart className="w-6 h-6 text-yellow-300" />
+                  <h4 className="font-bold text-lg">أهمية صلاة الجمعة</h4>
+                </div>
+                <p className="text-sm opacity-90 leading-relaxed">
+                  تُعد صلاة الجمعة من أهم الصلوات الأسبوعية، ويحظى حضورها في وقتها بأجر عظيم، لذا من الضروري معرفة توقيتها بدقة في كل أسبوع.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Hadith Section */}
+        <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 mb-12 border border-amber-100">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center">
+              <Book className="w-8 h-8 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-gray-800 mb-2">حديث شريف</h2>
+              <p className="text-gray-600">فضل الحضور المبكر لصلاة الجمعة</p>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-8 border-r-4 border-amber-500">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <Star className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <p className="text-lg leading-relaxed text-gray-800 mb-4">
+                  حَدَّثَنَا عَبْدُ اللَّهِ بْنُ يُوسُفَ، قَالَ أَخْبَرَنَا مَالِكٌ، عَنْ سُمَىٍّ، مَوْلَى أَبِي بَكْرِ بْنِ عَبْدِ الرَّحْمَنِ عَنْ أَبِي صَالِحٍ السَّمَّانِ، عَنْ أَبِي هُرَيْرَةَ ـ رضى الله عنه ـ أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ:
+                </p>
+                <div className="bg-white rounded-lg p-6 border border-amber-200 mb-4">
+                  <p className="text-xl leading-relaxed text-gray-800 font-semibold">
+                    "مَنِ اغْتَسَلَ يَوْمَ الْجُمُعَةِ غُسْلَ الْجَنَابَةِ ثُمَّ رَاحَ فَكَأَنَّمَا قَرَّبَ بَدَنَةً، وَمَنْ رَاحَ فِي السَّاعَةِ الثَّانِيَةِ فَكَأَنَّمَا قَرَّبَ بَقَرَةً، وَمَنْ رَاحَ فِي السَّاعَةِ الثَّالِثَةِ فَكَأَنَّمَا قَرَّبَ كَبْشًا أَقْرَنَ، وَمَنْ رَاحَ فِي السَّاعَةِ الرَّابِعَةِ فَكَأَنَّمَا قَرَّبَ دَجَاجَةً، وَمَنْ رَاحَ فِي السَّاعَةِ الْخَامِسَةِ فَكَأَنَّمَا قَرَّبَ بَيْضَةً، فَإِذَا خَرَجَ الإِمَامُ حَضَرَتِ الْمَلاَئِكَةُ يَسْتَمِعُونَ الذِّكْرَ"
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Friday Sunnahs */}
+        <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-green-100">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
+              <Heart className="w-8 h-8 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-gray-800 mb-2">سنن يوم الجمعة</h2>
+              <p className="text-gray-600">الآداب المستحبة ليوم الجمعة المبارك</p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {fridaySunnahs.map((sunnah, index) => (
+              <div key={index} className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-200 hover:shadow-lg transition-all duration-300">
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-bold text-sm">{index + 1}</span>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-green-800 mb-2 leading-relaxed">
+                      {sunnah.arabic}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed" dir="ltr">
+                      {sunnah.english}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-8 text-white text-center">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <Star className="w-8 h-8 text-yellow-300" />
+              <h3 className="text-2xl font-bold">بركات يوم الجمعة</h3>
+              <Star className="w-8 h-8 text-yellow-300" />
+            </div>
+            <p className="text-lg opacity-90 leading-relaxed">
+              اللهم بارك لنا في يوم الجمعة وتقبل منا صلاتنا وأعمالنا الصالحة
+            </p>
+          </div>
+        </div>
+      </div>
+</div>
 
        {/* Factors Affecting Prayer Times */}
        <div className="w-full mx-auto p-4 my-4 bg-white shadow-lg rounded-xl border border-gray-200">
           <h2 className="text-2xl font-bold text-gray-800 mb-6 text-right">
-            العوامل المؤثرة على مواقيت الصلاة في الرياض
+            العوامل المؤثرة على مواقيت الصلاة الرياض
           </h2>
   
           <div className="grid md:grid-cols-2 gap-6">
@@ -547,7 +745,7 @@ export default async function Home() {
           
           <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg">
             <p className="text-gray-700 text-right leading-relaxed mb-6">
-              نحن ملتزمون بتقديم <strong className="text-blue-600">اوقات الصلاة في الرياض</strong> بأعلى دقة ممكنة من خلال:
+              نحن ملتزمون بتقديم <strong className="text-blue-600">اوقات الصلاة </strong> بأعلى دقة ممكنة من خلال:
             </p>
             
             <div className="grid md:grid-cols-3 gap-4">

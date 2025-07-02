@@ -21,8 +21,9 @@ const DailyPrayers=async (prayerData:any)=>{
  const eventLd =    {
   "@context": "https://schema.org/",
   "@type": "Event",
-  "name": `مواقيت الصلاة في الرياض  - ${day}-${month}-${year}`,
-  "description": `مواقيت الصلاة في الرياض اليوم  تبدأ الساعة ${(data?.timings.Fajr as string).split('(')[0]} صباحا مع أذان الفجر وتنتهي في الساعة ${(data?.timings?.Isha as string).split('(')[0]} صباحا بصلاة العشاء. شروق الشمس الساعة ${(data?.timings.Sunrise as string).split('(')[0]} صباحا، وغروب الشمس والأذان المغربي الساعة ${(data?.timings.Maghrib as string).split('(')[0]} مساء.`,
+  "name": `مواقيت الصلاة في الرياض  `,
+  "description": `تعرف على مواقيت الصلاة في الرياض بدقة يومية، مع تحديثات مستمرة لأذان الرياض لجميع الصلوات الخمس. احصل على مواقيت صلاة الفجر، الظهر، العصر، المغرب، والعشاء`,
+
   "startDate": `${year}-${month}-${day}T${(data?.timings.Fajr as string).split('(')[0]}&#x2B;03:00`,
   "endDate": `${year}-${month}-${day}T${(data?.timings.Isha as string).split('(')[0]}&#x2B;03:00`,
   "location": "الرياض - السعودية",
@@ -51,7 +52,7 @@ const DailyPrayers=async (prayerData:any)=>{
 </div>
 <div className="overflow-x-auto mt-4">
 <h2 className="text-lg md:text-2xl font-semibold text-gray-700 mb-2 mx-4">
-    اوقات الصلاة في الرياض - {`${today.getDate()} ${monthArabic[data.month]} ${today.getFullYear()}`}
+ اوقات الصلاة في الرياض - {`${today.getDate()} ${monthArabic[data.month]} ${today.getFullYear()}`} 
     </h2>
   <p className="mx-4">
     
