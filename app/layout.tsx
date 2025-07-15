@@ -35,11 +35,26 @@ export default function RootLayout({
 
         {children}
         </div>
-        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8595573554754985"
+        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9313620054511459"
+
      crossOrigin="anonymous" />
      <Script 
      async src="https://cdn.jsdelivr.net/npm/lazyhtml@1.2.3/dist/lazyhtml.min.js" crossOrigin="anonymous"
      />
+
+
+<Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-S0PC2HSKK5"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-S0PC2HSKK5');
+          `}
+        </Script>
         <Footer></Footer>
         </body>
     </html>

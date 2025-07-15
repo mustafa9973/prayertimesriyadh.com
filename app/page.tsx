@@ -291,7 +291,7 @@ export default async function Home() {
                 <Users className="w-8 h-8 text-white" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">ملاحظات مهمة</h2>
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">ملاحظات مهمة</h3>
                 <p className="text-gray-600">نصائح للحضور الأمثل</p>
               </div>
             </div>
@@ -341,7 +341,7 @@ export default async function Home() {
               <Book className="w-8 h-8 text-white" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-gray-800 mb-2">حديث شريف</h2>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">حديث شريف عن صلاة الجمعة</h3>
               <p className="text-gray-600">فضل الحضور المبكر لصلاة الجمعة</p>
             </div>
           </div>
@@ -357,7 +357,7 @@ export default async function Home() {
                 </p>
                 <div className="bg-white rounded-lg p-6 border border-amber-200 mb-4">
                   <p className="text-xl leading-relaxed text-gray-800 font-semibold">
-                    "مَنِ اغْتَسَلَ يَوْمَ الْجُمُعَةِ غُسْلَ الْجَنَابَةِ ثُمَّ رَاحَ فَكَأَنَّمَا قَرَّبَ بَدَنَةً، وَمَنْ رَاحَ فِي السَّاعَةِ الثَّانِيَةِ فَكَأَنَّمَا قَرَّبَ بَقَرَةً، وَمَنْ رَاحَ فِي السَّاعَةِ الثَّالِثَةِ فَكَأَنَّمَا قَرَّبَ كَبْشًا أَقْرَنَ، وَمَنْ رَاحَ فِي السَّاعَةِ الرَّابِعَةِ فَكَأَنَّمَا قَرَّبَ دَجَاجَةً، وَمَنْ رَاحَ فِي السَّاعَةِ الْخَامِسَةِ فَكَأَنَّمَا قَرَّبَ بَيْضَةً، فَإِذَا خَرَجَ الإِمَامُ حَضَرَتِ الْمَلاَئِكَةُ يَسْتَمِعُونَ الذِّكْرَ"
+                  &quot;مَنِ اغْتَسَلَ يَوْمَ الْجُمُعَةِ غُسْلَ الْجَنَابَةِ ثُمَّ رَاحَ فَكَأَنَّمَا قَرَّبَ بَدَنَةً، وَمَنْ رَاحَ فِي السَّاعَةِ الثَّانِيَةِ فَكَأَنَّمَا قَرَّبَ بَقَرَةً، وَمَنْ رَاحَ فِي السَّاعَةِ الثَّالِثَةِ فَكَأَنَّمَا قَرَّبَ كَبْشًا أَقْرَنَ، وَمَنْ رَاحَ فِي السَّاعَةِ الرَّابِعَةِ فَكَأَنَّمَا قَرَّبَ دَجَاجَةً، وَمَنْ رَاحَ فِي السَّاعَةِ الْخَامِسَةِ فَكَأَنَّمَا قَرَّبَ بَيْضَةً، فَإِذَا خَرَجَ الإِمَامُ حَضَرَتِ الْمَلاَئِكَةُ يَسْتَمِعُونَ الذِّكْرَ&quot;
                   </p>
                 </div>
               </div>
@@ -372,7 +372,7 @@ export default async function Home() {
               <Heart className="w-8 h-8 text-white" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-gray-800 mb-2">سنن يوم الجمعة</h2>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">سنن يوم الجمعة</h3>
               <p className="text-gray-600">الآداب المستحبة ليوم الجمعة المبارك</p>
             </div>
           </div>
@@ -385,9 +385,9 @@ export default async function Home() {
                     <span className="text-white font-bold text-sm">{index + 1}</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-bold text-green-800 mb-2 leading-relaxed">
+                    <h4 className="font-bold text-green-800 mb-2 leading-relaxed">
                       {sunnah.arabic}
-                    </h3>
+                    </h4>
                     <p className="text-gray-600 text-sm leading-relaxed" dir="ltr">
                       {sunnah.english}
                     </p>
