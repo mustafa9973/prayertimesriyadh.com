@@ -55,7 +55,7 @@ export default function MethodDialog() {
           <label className="block" htmlFor="school">اختر المدرسة:</label>
           <select id="school" onChange={(e)=> setNewSchool(e.target.value)} value={newSchool} className="border w-4/6 border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:border-blue-500">
           {Array.from(AppConstants.school).map(([key, value]) => (
-    <option key={key} value={key}>
+    <option key={key} value={value}>
         {value}
     </option>
 ))}

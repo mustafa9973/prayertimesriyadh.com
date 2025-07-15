@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/timer-handler/time-handler.tsx", "app/(components)/dialog/dialog.jsx", "app/(components)/ad-widget/add.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/timer-handler/time-handler.tsx", "app/(components)/dialog/dialog.jsx", "app/(components)/ad-widget/add.jsx", "app/(components)/sehr-aftar-time/sehr-aftar-time.tsx"],
   "exclude": ["node_modules"]
 }

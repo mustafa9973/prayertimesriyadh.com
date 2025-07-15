@@ -7,7 +7,8 @@ import dynamic from "next/dynamic";
 import DailyPrayers from "./(components)/daily-prayers/dailyPrayers";
 import MethodDialog from "./(components)/dialog/method-dialog";
 import Faqs from "./(components)/faqs/faqs";
-
+import SeharIftarSection from "./(components)/sehr-aftar-time/sehr-aftar-time";
+import NawafilTimesSection from "./(components)/nawafil-time/nawafil-time";
 import Link from "next/link";
 import { Star, Clock, MapPin, Sun, Moon,Castle ,Building, Book, Heart, Users } from "lucide-react";
 // Client Components:
@@ -129,7 +130,7 @@ export default async function Home() {
 
       </div>
 
-      <div className="bg-white text-black p-4 rounded-xl shadow-md flex flex-col mt-3">
+      {/* <div className="bg-white text-black p-4 rounded-xl shadow-md flex flex-col mt-3">
 
         <h2 className="font-semibold text-lg md:text-xl text-gray-800 mt-3 ">
 
@@ -142,13 +143,13 @@ export default async function Home() {
         <p>
           تتميز مدينة الرياض بموقعها الجغرافي المتميز في وسط المملكة العربية السعودية، مما يؤثر على حساب أوقات الصلاة بطريقة خاصة. المدينة تقع على خط عرض 24.7136° شمالاً وخط طول 46.6753° شرقاً، وتتبع التوقيت المحلي السعودي (GMT+3).
         </p>
-      </div>
+      </div> */}
 
 
 
+<SeharIftarSection data={data}></SeharIftarSection>
 
-
-
+<NawafilTimesSection data={data}>  </NawafilTimesSection>
 
       <div className="text-gray-600 my-5">
         <div className="flex flex-col justify-center h-full">
@@ -504,45 +505,7 @@ export default async function Home() {
           </div>
         </div>
 
-            {/* Ramadan Special Section */}
-            <div className="w-full mx-auto p-4 my-4 bg-white shadow-lg rounded-xl border border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-right">
-            اعتبارات خاصة في شهر رمضان
-          </h2>
-          
-          <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg">
-            <p className="text-gray-700 text-right leading-relaxed mb-4">
-              في شهر رمضان المبارك، تكتسب <strong className="text-purple-600">مواقيت الصلاة في الرياض</strong> أهمية خاصة:
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-4">
-              <div className="bg-white p-4 rounded-lg shadow-sm">
-                <h3 className="font-semibold text-purple-700 mb-2 text-right">السحور والإفطار</h3>
-                <ul className="text-gray-700 space-y-1 text-right text-sm">
-                  <li>• وقت السحور يُحدد بـ <strong>أذان الفجر الرياض</strong></li>
-                  <li>• وقت الإفطار يُحدد بـ <strong>أذان المغرب الرياض</strong></li>
-                </ul>
-              </div>
-              
-              <div className="bg-white p-4 rounded-lg shadow-sm">
-                <h3 className="font-semibold text-purple-700 mb-2 text-right">صلاة التراويح</h3>
-                <ul className="text-gray-700 space-y-1 text-right text-sm">
-                  <li>• تُؤدى بعد <strong>أذان العشاء الرياض</strong></li>
-                  <li>• تستمر لحوالي ساعة في معظم المساجد</li>
-                </ul>
-              </div>
-              
-              <div className="bg-white p-4 rounded-lg shadow-sm">
-                <h3 className="font-semibold text-purple-700 mb-2 text-right">العشر الأواخر</h3>
-                <ul className="text-gray-700 space-y-1 text-right text-sm">
-                  <li>• ليلة القدر تُطلب في العشر الأواخر</li>
-                  <li>• أوقات السحر مباركة للدعاء</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
+  
 
 
       <div className="w-full mx-auto p-4 my-4 bg-white shadow-lg rounded-xl border border-gray-200">
